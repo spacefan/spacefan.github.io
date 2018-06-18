@@ -1,0 +1,445 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ORBITER 模拟航天入门攻略 - Ch00 | Spacefan</title>
+  <meta name="author" content="Spacefan">
+  
+  <meta name="description" content="初识ORBITER">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="ORBITER 模拟航天入门攻略 - Ch00"/>
+  <meta property="og:site_name" content="Spacefan"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/journal.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight-default.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/comment.css" media="screen" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
+  <![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+  
+    <script src="/js/marked.js"></script>
+    <script src="/js/comment.js"></script>
+    <script src="/js/timeago.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+	<script src="/js/spin.min.js"></script>
+  
+  <!-- analytics -->
+  
+
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">Spacefan</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="所有文章">
+			  <i class="fa fa-archive"></i>归档
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="文章分类">
+			  <i class="fa fa-folder"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="关键词索引">
+			  <i class="fa fa-tags"></i>标签
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="关于我">
+			  <i class="fa fa-user"></i>关于
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> ORBITER 模拟航天入门攻略 - Ch00</h1>
+		</div>		
+	
+
+
+
+
+   <style type="text/css">
+           img, video {
+                -webkit-box-shadow:0 0 10px rgba(0, 0, 0, .5);  
+                -moz-box-shadow:0 0 10px rgba(0, 0, 0, .5);  
+                box-shadow:0 0 10px rgba(0, 0, 0, .5);  
+           }
+   </style>
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  
+		 <div class="alert alert-success description">
+			<i class="fa fa-info-circle"></i> <p>初识ORBITER</p>
+			
+		 </div> <!-- alert -->
+	  		
+
+	  <h2 id="基本简介"><a href="#基本简介" class="headerlink" title="基本简介"></a>基本简介</h2><hr>
+<p><a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 是一款功能异常强大的免费太空飞行模拟器，它可以带你冲破卡门线，驶入浩瀚的星空，体味驾驶宇宙飞船的快感。</p>
+<p><a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 的核心部分由 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">Dr. Martin Schweiger</a> 团队开发，第一个版本于2000年11月27日发布，最新稳定版本为 <code>ORBITER 2016</code>。通常，官方发布的 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 版本只是基础版（<code>Base Edition</code>），用户要想获得绝佳的飞行体验还需要下载第三方扩展插件，如 <a href="http://orbiter.dansteph.com/index.php" target="_blank" rel="noopener">DanSteph</a> 开发的 <a href="http://orbiter.dansteph.com/forum/index.php?page=download" target="_blank" rel="noopener">OrbiterSound</a>，及社区开发用于支持 <code>DirectX9</code> 图形渲染的 <a href="http://d3d9client.codeplex.com/" target="_blank" rel="noopener">D3D9Client</a> 客户端。</p>
+<p><a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 能够十分真实地模拟航天器在轨运行的轨迹，这源于隐藏在视觉背后的航天动力学理论知识。当用户驾驶飞船翱翔在太阳系时，实际上是沉侵于太阳强大的引力场中。下面让我们用三个视频来更为直观地认识 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a>。</p>
+<a id="more"></a>
+<blockquote>
+<p><strong>A FILM BY TEX - ORBITER 2006-P1 EDITION</strong><br>   <iframe frameborder="0" width="790" height="540" src="http://v.qq.com/iframe/player.html?vid=x0326avo9te&tiny=0&auto=0" allowfullscreen></iframe></p>
+</blockquote>
+<blockquote>
+<p><strong>ALR-4 - MISSION TO VENUS</strong><br>   <iframe frameborder="0" width="790" height="540" src="http://v.qq.com/iframe/player.html?vid=g03264tc6m0&tiny=0&auto=0" allowfullscreen></iframe></p>
+</blockquote>
+<blockquote>
+<p><strong>A FILM BY TEX - Jupiter Odyssey</strong><br>   <iframe frameborder="0" width="790" height="540" src="http://v.qq.com/iframe/player.html?vid=w03268p8x81&tiny=0&auto=0" allowfullscreen></iframe></p>
+</blockquote>
+<p>(: <code>肿么样! 有没有感觉到：高、大、上</code> :)</p>
+<hr>
+<h2 id="影响力"><a href="#影响力" class="headerlink" title="影响力"></a>影响力</h2><hr>
+<p>经过十多年的开发，<a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 日益成熟，在国内外得到了广大模拟飞行爱好者的青睐。在国外，<a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 已经广泛用于教学辅助，产生了巨大的反响。在 <a href="http://www.youtube.com" target="_blank" rel="noopener">Yutube</a>  上，众多<a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 爱好者发布有相关的教学视频，帮助初学者快速进入角色。</p>
+<p><a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 的发展离不开强大的社区，其中最值得一提的是由 Tex 组建的官方论坛 <a href="http://www.orbiter-forum.com/" target="_blank" rel="noopener">ORBITER Forum</a>。在这里中，众多 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 爱好者齐聚一堂，相互学习、相互帮助、协同开发，共同推动着 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 向前发展。</p>
+<hr>
+<h2 id="开放度"><a href="#开放度" class="headerlink" title="开放度"></a>开放度</h2><hr>
+<p><a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 虽然可以免费获取，但它并不是一款开源软件，它的开放性体现在 SDK (Software Development Kits，软件开发套件)。通过 SDK 预设的 API，开发者可以进行二次开发，创建出各种各样属于自己的箭船、地景、星球、MFD 以及其它各种各样的插件。</p>
+<hr>
+<h2 id="任务类型"><a href="#任务类型" class="headerlink" title="任务类型"></a>任务类型</h2><hr>
+<p><a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 之所以受到广大模拟飞行爱好者的青睐，是因为其具有丰富的任务类型。你无需担心来自外星人的攻击，也无需为提高等级而“过关斩将”。你唯一需要做的就是自己设定好飞行任务，然后飞到太阳系中任何你想去的地方。通常情况下，用户可以在 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 中执行以下几类基本任务：</p>
+<ul>
+<li>驾驶各色各样的飞行器奔向太空；</li>
+<li>在太空中进行各种形式的轨道机动；</li>
+<li>执行各种航天任务，如交会对接、太空行走（EVA）、载荷部署、空间目标捕获及空间站组建等，当然还有欣赏太空那迷人的美景；</li>
+<li>进行星际航行，访问太阳系内的行星或卫星；</li>
+<li>从太空返回并降落，当然最好是能安全降落。</li>
+</ul>
+<hr>
+<h2 id="内建航天器"><a href="#内建航天器" class="headerlink" title="内建航天器"></a>内建航天器</h2><hr>
+<p><a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 基础版本含有丰富的内建航天器，包含真实世界中存在的航天器和概念航天器。</p>
+<hr>
+<h3 id="真实世界存在的航天器"><a href="#真实世界存在的航天器" class="headerlink" title="真实世界存在的航天器"></a>真实世界存在的航天器</h3><hr>
+<h4 id="1-“阿特兰蒂斯号”-航天飞机-Space-Shuttle-Atlantis"><a href="#1-“阿特兰蒂斯号”-航天飞机-Space-Shuttle-Atlantis" class="headerlink" title="1. “阿特兰蒂斯号” 航天飞机 (Space Shuttle Atlantis)"></a>1. “阿特兰蒂斯号” 航天飞机 (Space Shuttle Atlantis)</h4><hr>
+<blockquote>
+<p><code>阿特兰蒂斯号</code> 是美国航天飞机梯队中的一员，由 <code>NASA</code> 运行维护。由于航天飞机维修花费巨大，且安全系数较低，已于2011年退出历史舞台。在 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 中，<code>阿特兰蒂斯号</code> 航天飞机是唯一一架玩家可操作的、基于真实设计参数构建的飞行器模型。</p>
+</blockquote>
+<hr>
+<h4 id="2-“和平号”-空间站-Space-Station-Mir"><a href="#2-“和平号”-空间站-Space-Station-Mir" class="headerlink" title="2. “和平号” 空间站 (Space Station Mir)"></a>2. “和平号” 空间站 (Space Station Mir)</h4><hr>
+<blockquote>
+<p><code>和平号</code> 空间站是前苏联发展的第三代空间站，象征着空间站走向实用阶段。前苏联解体后，<code>和平号</code> 空间站由俄罗斯接管，并超期服役至2001年，最终坠入太平洋。在 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 中，<code>和平号</code> 空间站并未坠毁，而是被放置在了一个近椭圆轨道。这样做的初衷是为了让 <code>和平号</code> 间站成为早期 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 版本中进行星际航行较好的出发点，当玩家驾驶着飞船与 <code>和平号</code> 空间站对接后，可以自动加注燃料，向更远的星际空间飞去。另外，玩家也可以从 <code>和平号</code> 空间站转移到最终的目标轨道。</p>
+</blockquote>
+<hr>
+<h4 id="3-国际空间站-International-Space-Station，ISS"><a href="#3-国际空间站-International-Space-Station，ISS" class="headerlink" title="3. 国际空间站 (International Space Station，ISS)"></a>3. 国际空间站 (International Space Station，ISS)</h4><hr>
+<blockquote>
+<p>运行在与真实世界相同轨道上并组装完成的 <code>国际空间站</code>，包括当前已经取消安装计划的模块。</p>
+</blockquote>
+<hr>
+<h4 id="4-哈勃太空望远镜-Hubble-Space-Telescope，HST"><a href="#4-哈勃太空望远镜-Hubble-Space-Telescope，HST" class="headerlink" title="4. 哈勃太空望远镜 (Hubble Space Telescope，HST)"></a>4. 哈勃太空望远镜 (Hubble Space Telescope，HST)</h4><hr>
+<blockquote>
+<p>真实比列的 <code>哈勃太空望远镜</code>模型，在 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 中通常作为航天飞机的载荷。</p>
+</blockquote>
+<hr>
+<h4 id="5-长期暴露装置-Long-Duration-Exposure-Facility，LDEF"><a href="#5-长期暴露装置-Long-Duration-Exposure-Facility，LDEF" class="headerlink" title="5. 长期暴露装置 (Long Duration Exposure Facility，LDEF)"></a>5. 长期暴露装置 (Long Duration Exposure Facility，LDEF)</h4><hr>
+<blockquote>
+<p><code>LDEF</code> 是 <code>NASA</code> 为研究空间环境对航天器性能影响作用机理而发射的实验卫星，在将近 6 年的暴露时间里，<code>LDEF</code> 经历了各种空间环境的作用，为 <code>NASA</code> 研究人员提供了宝贵的实验数据。和 <code>哈勃太空望远镜</code> 一样，<code>LDEF</code> 是 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 中航天飞机极佳的有效载荷之一。</p>
+</blockquote>
+<hr>
+<h3 id="概念航天器"><a href="#概念航天器" class="headerlink" title="概念航天器"></a>概念航天器</h3><hr>
+<h4 id="1-Delta-glider-MK-4"><a href="#1-Delta-glider-MK-4" class="headerlink" title="1. Delta-glider MK.4"></a>1. Delta-glider MK.4</h4><hr>
+<blockquote>
+<p><code>德尔塔</code> 三角翼空天飞机是 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 经典的入门级飞行器，它十分容易操作，所以被 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 用作默认飞行器。有两种型号的 <code>德尔塔</code>，一种是 <code>Delta-glider Mk.4 (DG)</code>，另一种是 <code>Delta-glider-S MK.4 (DG-S)</code>。<code>DG-S</code> 在 <code>DG</code> 的基础上加装了超燃发动机，使得其可以在高层大气进行超音速飞行。由于德尔塔的设计过程中采用了超高比冲的推进剂和超低燃料消耗率的发动机，所以它可以很轻松地实现单级入轨，并具备星际航行的能力。</p>
+</blockquote>
+<hr>
+<h4 id="2-Shuttle-A"><a href="#2-Shuttle-A" class="headerlink" title="2. Shuttle-A"></a>2. Shuttle-A</h4><hr>
+<blockquote>
+<p><code>Shuttle-A</code> 是 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 中的小型概念太空货运飞船，可以运输六个总重高达120吨的大型货箱。它没有气动操纵面，主要用于月球和火星测探。空载时，<code>Shuttle-A</code> 可以从地球起飞，并降落在地面上。但由于其缺乏气动升力，加上地球的引力和大气阻力，使得 <code>Shuttle-A</code> 从地面起飞、降落变得困难，且十分消耗燃料。 <code>Shuttle-A</code> 的货箱带有自动降落伞，因而可以在高层大气释放货物。<code>Shuttle-A</code> 的惯性大，空气动力学性能极差，致使其比 <code>德尔塔</code>更难在大气层内飞行。</p>
+</blockquote>
+<hr>
+<h4 id="3-Shuttle-PB"><a href="#3-Shuttle-PB" class="headerlink" title="3. Shuttle-PB"></a>3. Shuttle-PB</h4><hr>
+<blockquote>
+<p><code>Shuttle-PB</code> 是 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 中的小型个人航天器，其敏捷性高，外形设计具有前瞻性。由于主要作为 SDK 样例供插件开发者参考，所以相对于 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 中的其它内建飞船，<code>Shuttle-PB</code> 缺乏具体的细节，如 2D/3D 座舱和动画显示功能。</p>
+</blockquote>
+<hr>
+<h4 id="4-Dragonfly"><a href="#4-Dragonfly" class="headerlink" title="4. Dragonfly"></a>4. Dragonfly</h4><hr>
+<blockquote>
+<p><code>Dragonfly</code> 是 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 中为空间站组件而设计的一种构造复杂的载人航天运载器，它对多个子系统进行了仿真设计，其复杂度胜过 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 其它所有内建航天器。<code>Dragonfly</code> 作为 SDK 技术实现层面的绝佳示例，其源代码包含在 ORBITER/SDK 安装包内。<code>Dragonfly</code> 的飞行模型设计参数可以用当前的航天技术实现，所以称 <code>Dragonfly</code> 是一种接近现实的航天器。</p>
+</blockquote>
+<hr>
+<h4 id="5-Luna-OB1"><a href="#5-Luna-OB1" class="headerlink" title="5. Luna-OB1"></a>5. Luna-OB1</h4><hr>
+<blockquote>
+<p><code>Luna-OB1</code> 是 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 中的一座科幻轮状月球轨道空间站，其设计灵感来自《2001: A Space Odyssey》片头中的 <code>Space Station V</code>。由于 <code>Luna-OB1</code> 以固定的旋转角速度运动，所以与其对接是一件极具挑战性的任务。</p>
+</blockquote>
+<hr>
+<h4 id="6-Carina"><a href="#6-Carina" class="headerlink" title="6. Carina"></a>6. Carina</h4><hr>
+<blockquote>
+<p><code>Carina</code> 是一种小型的概念卫星，在 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 中作为航天飞机的有效载荷，但目前还属于毫无用途的载荷类型。</p>
+</blockquote>
+<hr>
+<h2 id="操作复杂度"><a href="#操作复杂度" class="headerlink" title="操作复杂度"></a>操作复杂度</h2><hr>
+<p><a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 并不像多数商业化太空游戏，只具备十分粗糙的物理模型，其内部采用的是精确的航天动力学模型，包括 <code>Kepler</code> 二体轨道、非球形摄动（只考虑带谐项）、大气阻力摄动（高达 2000km）及太阳光压摄动。如果你想真正理解 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 的运行方式，需要有一定的轨道力学基础。</p>
+<p>此外，虽然 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 可以连接飞行摇杆，但绝大多数操作需要使用快捷键，这在某种程度上也增加了 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 的入门难度。</p>
+<p>总而言之，<a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 是一款十分严谨的太空飞行模拟器，掌握 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 需要大量的实践操作，以及对轨道力学的深刻理解。</p>
+<hr>
+<h2 id="文档完善度"><a href="#文档完善度" class="headerlink" title="文档完善度"></a>文档完善度</h2><hr>
+<p><a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 经过十多年的发展，拥有数量相当可观的用户群，相关的教程也较为完善。除了官方发布的文档外（位于 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 安装根目录下的 \Doc 子文件夹内），互联网上可以找到很多关于 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 的学习资料。但由于绝大多数教程由英文写成，且专业性较强，所以 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 的学习曲线仍然相当陡峭。</p>
+<p>最后需要说明的是，要想成为一名顶级的 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 玩家，需要大量的时间和持久的耐心进行实践操作，在此过程中一定要坚持，不气馁、不放弃。永远记住，这是真正的太空模拟飞行，而不只是游戏。毕竟，我们选择在 <a href="http://orbit.medphys.ucl.ac.uk/index.html" target="_blank" rel="noopener">ORBITER</a> 中模拟飞行，<code>不是因为它简单，而是因为它难</code>。</p>
+<p class="text-muted"></p><p>&copy; Copyright by Spacefan 2016-2017. </p>
+<p></p>
+	  
+	</div>
+
+	<!-- recommended posts -->
+	
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/2016/08/31/orbiter2016/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/2016/03/20/OpenTools/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">留言</h2>
+    	 
+	 <div id="comment-thread"></div>
+	 <div id="loading-spin"></div>
+	 <script type="text/javascript">
+	   getComments({
+           type: "github" ? "github" : "github",       
+	       user: "spacefan",
+	       repo: "spacefan-freemind-blog",
+		   client_id: "f2072a8da3401ea34d92",
+           client_secret: "a11277dbf0f5791d093f7300bc2504de7cf3b101",
+		   no_comment: "暂时还没有留言呢，点击下面的按钮去留言吧！",
+		   go_to_comment: "去留言",
+		   no_issue: "no_issue",
+		   issue_title: "ORBITER 模拟航天入门攻略 - Ch00",
+		   issue_id: "",
+		   btn_class: "btn btn-primary",
+		   comments_target: "#comment-thread",
+		   loading_target: "#loading_spin"
+		   });
+	 </script>
+  
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2016-03-25 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/模拟飞行/">模拟飞行<span>2</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/ORBITER/">ORBITER<span>2</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#基本简介"><span class="toc-article-text">基本简介</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#影响力"><span class="toc-article-text">影响力</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#开放度"><span class="toc-article-text">开放度</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#任务类型"><span class="toc-article-text">任务类型</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#内建航天器"><span class="toc-article-text">内建航天器</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#真实世界存在的航天器"><span class="toc-article-text">真实世界存在的航天器</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#1-“阿特兰蒂斯号”-航天飞机-Space-Shuttle-Atlantis"><span class="toc-article-text">1. “阿特兰蒂斯号” 航天飞机 (Space Shuttle Atlantis)</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#2-“和平号”-空间站-Space-Station-Mir"><span class="toc-article-text">2. “和平号” 空间站 (Space Station Mir)</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#3-国际空间站-International-Space-Station，ISS"><span class="toc-article-text">3. 国际空间站 (International Space Station，ISS)</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#4-哈勃太空望远镜-Hubble-Space-Telescope，HST"><span class="toc-article-text">4. 哈勃太空望远镜 (Hubble Space Telescope，HST)</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#5-长期暴露装置-Long-Duration-Exposure-Facility，LDEF"><span class="toc-article-text">5. 长期暴露装置 (Long Duration Exposure Facility，LDEF)</span></a></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#概念航天器"><span class="toc-article-text">概念航天器</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#1-Delta-glider-MK-4"><span class="toc-article-text">1. Delta-glider MK.4</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#2-Shuttle-A"><span class="toc-article-text">2. Shuttle-A</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#3-Shuttle-PB"><span class="toc-article-text">3. Shuttle-PB</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#4-Dragonfly"><span class="toc-article-text">4. Dragonfly</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#5-Luna-OB1"><span class="toc-article-text">5. Luna-OB1</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#6-Carina"><span class="toc-article-text">6. Carina</span></a></li></ol></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#操作复杂度"><span class="toc-article-text">操作复杂度</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#文档完善度"><span class="toc-article-text">文档完善度</span></a></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016~2018 Spacefan
+  
+      由 <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> 强力驱动 || 主题使用 <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>   
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+<!-- syntax highlighting -->
+
+  <script>
+  marked.setOptions({
+    highlight: function (code, lang) {
+        return hljs.highlightAuto(code).value;
+    }
+  });
+  function Highlighting(){
+    var markdowns = document.getElementsByClassName('markdown');
+    for(var i=0;i<markdowns.length;i++){
+        if(markdowns[i].innerHTML) markdowns[i].innerHTML =marked(markdowns[i].innerHTML);
+    }
+  }
+  window.addEventListener('DOMContentLoaded', Highlighting, false);
+  window.addEventListener('load', Highlighting, false);
+  </script>
+
+
+</body>
+   </html>
