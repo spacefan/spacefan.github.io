@@ -136,65 +136,46 @@
 		 </div> <!-- alert -->
 	  		
 
-	  <h2 id="r2017a-简要说明"><a class="markdownIt-Anchor" href="#r2017a-简要说明"></a> R2017a 简要说明</h2>
-<p>经过一年多的开发，<a href="https://sourceforge.net/projects/gmat/files/GMAT/GMAT-R2017a/" target="_blank" rel="noopener">R2017a</a> 终于2017年7月18日在SF上发布，虽然官方网站并未未对此次发布作任何说明，但通过版本注释可以获得 <a href="https://sourceforge.net/projects/gmat/files/GMAT/GMAT-R2017a/" target="_blank" rel="noopener">R2017a</a> 的新特性。此外，还可通过访问 <a href="http://bugs.gmatcentral.org/secure/ReleaseNote.jspa?projectId=10000&amp;version=11000" target="_blank" rel="noopener">开发面板</a> 了解 <a href="https://sourceforge.net/projects/gmat/files/GMAT/GMAT-R2017a/" target="_blank" rel="noopener">R2017a</a> 开发记录及 Bug 列表。下面对版本注释作简单翻译。</p>
-<h2 id="r2017a-新特性"><a class="markdownIt-Anchor" href="#r2017a-新特性"></a> R2017a 新特性</h2>
-<h3 id="1-定轨能力强化"><a class="markdownIt-Anchor" href="#1-定轨能力强化"></a> 1. 定轨能力强化</h3>
-<hr>
+	  <h2 id="R2017a-简要说明"><a href="#R2017a-简要说明" class="headerlink" title="R2017a 简要说明"></a>R2017a 简要说明</h2><p>经过一年多的开发，<a href="https://sourceforge.net/projects/gmat/files/GMAT/GMAT-R2017a/" target="_blank" rel="noopener">R2017a</a> 终于2017年7月18日在SF上发布，虽然官方网站并未未对此次发布作任何说明，但通过版本注释可以获得 <a href="https://sourceforge.net/projects/gmat/files/GMAT/GMAT-R2017a/" target="_blank" rel="noopener">R2017a</a> 的新特性。此外，还可通过访问 <a href="http://bugs.gmatcentral.org/secure/ReleaseNote.jspa?projectId=10000&amp;version=11000" target="_blank" rel="noopener">开发面板</a> 了解 <a href="https://sourceforge.net/projects/gmat/files/GMAT/GMAT-R2017a/" target="_blank" rel="noopener">R2017a</a> 开发记录及 Bug 列表。下面对版本注释作简单翻译。</p>
+<h2 id="R2017a-新特性"><a href="#R2017a-新特性" class="headerlink" title="R2017a 新特性"></a>R2017a 新特性</h2><h3 id="1-定轨能力强化"><a href="#1-定轨能力强化" class="headerlink" title="1. 定轨能力强化"></a>1. 定轨能力强化</h3><hr>
 <p>定轨方面，<a href="https://sourceforge.net/projects/gmat/files/GMAT/GMAT-R2017a/" target="_blank" rel="noopener">R2017a</a> 增加了如下新功能：</p>
 <ul>
 <li>新增了对三种数据类型的处理支持：1) GPS 导航状态矢量 (GPS_PosVec)；2) 距离测量数据 (Range)；3) 距离变化率数据 (RangeRate)。注意，这三种数据类型都经过反复测试，但只有 DSN 距离变化率数据通过了应用级测试，即 DSN 距离变化率数据对于 <a href="http://gmatcentral.org/display/GW/GMAT+Wiki+Home" target="_blank" rel="noopener">GMAT</a> 来说是可靠的数据。</li>
 </ul>
 <a id="more"></a>
 <ul>
-<li>
-<p>A minimally tested and documented alpha version of an extended Kalman filter algorithm is now available for experimental use. This plugin is available but turned off by default. To use, enable the “libEKF” plugin in the startup file.</p>
+<li><p>A minimally tested and documented alpha version of an extended Kalman filter algorithm is now available for experimental use. This plugin is available but turned off by default. To use, enable the “libEKF” plugin in the startup file.</p>
 </li>
-<li>
-<p>A second-level data editing capability has been added. This feature allows you to choose observations that are computed and reported but not used in the estimation state update.</p>
+<li><p>A second-level data editing capability has been added. This feature allows you to choose observations that are computed and reported but not used in the estimation state update.</p>
 </li>
 </ul>
-<h3 id="2-stk-e格式星历预报器"><a class="markdownIt-Anchor" href="#2-stk-e格式星历预报器"></a> 2. STK .e格式星历预报器</h3>
-<hr>
+<h3 id="2-STK-e格式星历预报器"><a href="#2-STK-e格式星历预报器" class="headerlink" title="2. STK .e格式星历预报器"></a>2. STK .e格式星历预报器</h3><hr>
 <p>GMAT now supports a propagator that uses AGI’s .e ephemeris file format. See the Propagator reference for more information.</p>
-<h3 id="3-文件管理工具"><a class="markdownIt-Anchor" href="#3-文件管理工具"></a> 3. 文件管理工具</h3>
-<hr>
+<h3 id="3-文件管理工具"><a href="#3-文件管理工具" class="headerlink" title="3. 文件管理工具"></a>3. 文件管理工具</h3><hr>
 <p>You can now manage empirical data updates using a Python file manager. The utility allows you to easily update leap second, EOP, space weather, and other files and optionally archive old versions. See the Configuring GMAT Data Files section for more information. When you run the the utility, you will see output like that shown below (the data below is only a partial summary of the output)</p>
-<h3 id="4-csalt-独立库与工具箱配置工具"><a class="markdownIt-Anchor" href="#4-csalt-独立库与工具箱配置工具"></a> 4. CSALT 独立库与工具箱配置工具</h3>
-<hr>
+<h3 id="4-CSALT-独立库与工具箱配置工具"><a href="#4-CSALT-独立库与工具箱配置工具" class="headerlink" title="4. CSALT 独立库与工具箱配置工具"></a>4. CSALT 独立库与工具箱配置工具</h3><hr>
 <p>GMAT now has a stand alone C++ library for solving optimal control problems via collocation (CSALT). The library is well tested and available for applications, and is currently undergoing integration into GMAT. The CSALT library is not exposed via GMAT interfaces, but users who are familiar with C++ programming can solve optimal control problems with CSALT now. The source code will be made available via SourceForge. CSALT integration into GMAT is underway and planned for completion in the next GMAT release. For more information on the CSALT Library see the paper entitled CSALT_CollocationBenchmarkingResults.pdf in the docs folder of the GMAT distribution.</p>
-<h3 id="5-api-接口雏形"><a class="markdownIt-Anchor" href="#5-api-接口雏形"></a> 5. API 接口雏形</h3>
-<hr>
+<h3 id="5-API-接口雏形"><a href="#5-API-接口雏形" class="headerlink" title="5. API 接口雏形"></a>5. API 接口雏形</h3><hr>
 <p>A preliminary API is under development. The API is not available in the production release and is distributed separately on SourceForge in packages with the name “Alpha” in the title. The API employs SWIG to expose GMAT to several languages. Preliminary testing has been performed on the JAVA interface called from MATLAB. The code snippet below illustrates how to call through the JAVA interface from MATLAB to compute orbital accelerations on a spacecraft. Some testing of the Python binding as also been performed.</p>
-<h2 id="r2017a-性能改进"><a class="markdownIt-Anchor" href="#r2017a-性能改进"></a> R2017a 性能改进</h2>
-<ul>
-<li>
-<p>You can now define the name and location of the gmat startup and log<br>
-file via the command line interface. This is useful when running multiple GMAT sessions simultaneously or when you have complex, custom file configurations.</p>
+<h2 id="R2017a-性能改进"><a href="#R2017a-性能改进" class="headerlink" title="R2017a 性能改进"></a>R2017a 性能改进</h2><ul>
+<li><p>You can now define the name and location of the gmat startup and log<br>file via the command line interface. This is useful when running multiple GMAT sessions simultaneously or when you have complex, custom file configurations.</p>
 </li>
-<li>
-<p>You can now write STK ephem files with units in meters (previously, only km was supported).</p>
+<li><p>You can now write STK ephem files with units in meters (previously, only km was supported).</p>
 </li>
-<li>
-<p>You can now write STK ephem files without discrete event boundaries.</p>
+<li><p>You can now write STK ephem files without discrete event boundaries.</p>
 </li>
 </ul>
-<h2 id="r2017a-兼容性变化"><a class="markdownIt-Anchor" href="#r2017a-兼容性变化"></a> R2017a 兼容性变化</h2>
-<ul>
-<li>
-<p>GMAT now requires Python version 3.6.x.</p>
+<h2 id="R2017a-兼容性变化"><a href="#R2017a-兼容性变化" class="headerlink" title="R2017a 兼容性变化"></a>R2017a 兼容性变化</h2><ul>
+<li><p>GMAT now requires Python version 3.6.x.</p>
 </li>
-<li>
-<p>Schatten files no longer require the “PREDICTED SOLAR DATA” keyword at the top of the file.</p>
+<li><p>Schatten files no longer require the “PREDICTED SOLAR DATA” keyword at the top of the file.</p>
 </li>
-<li>
-<p>The names and locations of several data files used by GMAT are no longer hard coded and their names and locations are set in the file gmat_startup_file.txt located in the bin directory. If you use custom startup files, you MUST add the lines below to your startup file before GMAT will start. Note that the startup files distributed with GMAT have these lines added. This backwards compatiblity issue only affects users who customize their startup file.</p>
+<li><p>The names and locations of several data files used by GMAT are no longer hard coded and their names and locations are set in the file gmat_startup_file.txt located in the bin directory. If you use custom startup files, you MUST add the lines below to your startup file before GMAT will start. Note that the startup files distributed with GMAT have these lines added. This backwards compatiblity issue only affects users who customize their startup file.</p>
 </li>
-<li>
-<p>The syntax for navigation functionality has been significantly changed for consistency throughout the system. See the Deprecated Measurement Type Names section of the Tracking Data Types for OD Help for more details.</p>
+<li><p>The syntax for navigation functionality has been significantly changed for consistency throughout the system. See the Deprecated Measurement Type Names section of the Tracking Data Types for OD Help for more details.</p>
 </li>
 </ul>
-<p class="text-muted"></p><p>© Copyright by Spacefan 2017~2018.</p>
+<p class="text-muted"></p><p>&copy; Copyright by Spacefan 2017~2018. </p>
 <p></p>
 
 	  
@@ -320,7 +301,7 @@ file via the command line interface. This is useful when running multiple GMAT s
 	
 	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
 	   <div id="toc" class="toc collapse in">
-			<ol class="toc-article"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#r2017a-简要说明"><span class="toc-article-text"> R2017a 简要说明</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#r2017a-新特性"><span class="toc-article-text"> R2017a 新特性</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#1-定轨能力强化"><span class="toc-article-text"> 1. 定轨能力强化</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#2-stk-e格式星历预报器"><span class="toc-article-text"> 2. STK .e格式星历预报器</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#3-文件管理工具"><span class="toc-article-text"> 3. 文件管理工具</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#4-csalt-独立库与工具箱配置工具"><span class="toc-article-text"> 4. CSALT 独立库与工具箱配置工具</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#5-api-接口雏形"><span class="toc-article-text"> 5. API 接口雏形</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#r2017a-性能改进"><span class="toc-article-text"> R2017a 性能改进</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#r2017a-兼容性变化"><span class="toc-article-text"> R2017a 兼容性变化</span></a></li></ol>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#R2017a-简要说明"><span class="toc-article-text">R2017a 简要说明</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#R2017a-新特性"><span class="toc-article-text">R2017a 新特性</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#1-定轨能力强化"><span class="toc-article-text">1. 定轨能力强化</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#2-STK-e格式星历预报器"><span class="toc-article-text">2. STK .e格式星历预报器</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#3-文件管理工具"><span class="toc-article-text">3. 文件管理工具</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#4-CSALT-独立库与工具箱配置工具"><span class="toc-article-text">4. CSALT 独立库与工具箱配置工具</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#5-API-接口雏形"><span class="toc-article-text">5. API 接口雏形</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#R2017a-性能改进"><span class="toc-article-text">R2017a 性能改进</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#R2017a-兼容性变化"><span class="toc-article-text">R2017a 兼容性变化</span></a></li></ol>
 		</div>
 	
 	</div>
