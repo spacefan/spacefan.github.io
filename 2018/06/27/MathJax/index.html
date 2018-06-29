@@ -150,16 +150,16 @@
 <h3 id="3-文章启用-MathJax"><a href="#3-文章启用-MathJax" class="headerlink" title="3. 文章启用 MathJax"></a>3. 文章启用 MathJax</h3><hr>
 <p>前面的方法允许文章选择性加载 <a href="https://www.mathjax.org/" target="_blank" rel="noopener">MathJax</a> 渲染公式，在每篇文章头部添加 <code>mathjax: true</code> 即选择使用 <a href="https://www.mathjax.org/" target="_blank" rel="noopener">MathJax</a> 渲染公式。如果不添加，则本篇文章不加载 <a href="https://www.mathjax.org/" target="_blank" rel="noopener">MathJax</a> 渲染公式，如此可以节约资源，增加网页访问速度。本文头部设置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加 MathJax 数学公式渲染</span><br><span class="line">date: 2018-06-27 21:30:00</span><br><span class="line">tags: Hexo教程</span><br><span class="line">categories: Hexo建站</span><br><span class="line">description: &quot;Hexo Freemind 主题使用 MathJax 渲染公式入门指南&quot;</span><br><span class="line">shadow: true</span><br><span class="line">mathjax: true</span><br><span class="line">feature: /images/hexo.jpg</span><br><span class="line">toc: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
 <h3 id="4-公式显示效果测试"><a href="#4-公式显示效果测试" class="headerlink" title="4. 公式显示效果测试"></a>4. 公式显示效果测试</h3><hr>
-<p><strong>行内公式测试：</strong>$f(x)=ax+b$，$sqrt(\frac{a^2+b^2}{a^2-b^2})$</p>
+<p><strong>行内公式测试：</strong> <script type="math/tex">f(x)=ax+b</script>，<script type="math/tex">sqrt(\frac{a^2+b^2}{a^2-b^2})</script></p>
 <p><strong>行间公式测试：</strong></p>
 <script type="math/tex; mode=display">
-H=-\sum_{i=1}^N (\sigma_{i}^x \sigma_{i+1}^x+g \sigma_{i}^z)</script><p><strong>换行测试1（用 \\ 可正常换行）：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">f(n) = \begin&#123;cases&#125;</span><br><span class="line"> \frac&#123;n&#125;&#123;2&#125;,</span><br><span class="line"> &amp; \text&#123;if &#125; n\text&#123; is even&#125;</span><br><span class="line"> \\ 3n+1, &amp; \text&#123;if &#125; n\text&#123; is odd&#125;</span><br><span class="line"> \end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure></p>
+H=-\sum_{i=1}^N (\sigma_{i}^x \sigma_{i+1}^x+g \sigma_{i}^z)</script><p><strong>换行测试1（用 \ 可正常换行）：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">f(n) = \begin&#123;cases&#125;</span><br><span class="line"> \frac&#123;n&#125;&#123;2&#125;,</span><br><span class="line"> &amp; \text&#123;if &#125; n\text&#123; is even&#125;</span><br><span class="line"> \\ 3n+1, &amp; \text&#123;if &#125; n\text&#123; is odd&#125;</span><br><span class="line"> \end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure></p>
 <script type="math/tex; mode=display">
 f(n) = \begin{cases}
  \frac{n}{2},
  & \text{if } n\text{ is even}
  \\\ 3n+1, & \text{if } n\text{ is odd}
- \end{cases}</script><p><strong>换行测试2（用 \\\ 代替 \\ 也可实现换行）：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">f(n) = \begin&#123;cases&#125;</span><br><span class="line"> \frac&#123;n&#125;&#123;2&#125;,</span><br><span class="line"> &amp; \text&#123;if &#125; n\text&#123; is even&#125;</span><br><span class="line"> \\\ 3n+1, &amp; \text&#123;if &#125; n\text&#123; is odd&#125;</span><br><span class="line"> \end&#123;cases&#125;</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">$$f</span><br><span class="line">(x): \begin&#123;cases&#125; x, x&gt;0 \\\ -x,x&lt;0 \end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure></p>
+ \end{cases}</script><p><strong>换行测试2（用 \\ 代替 \ 也可实现换行）：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">f(n) = \begin&#123;cases&#125;</span><br><span class="line"> \frac&#123;n&#125;&#123;2&#125;,</span><br><span class="line"> &amp; \text&#123;if &#125; n\text&#123; is even&#125;</span><br><span class="line"> \\\ 3n+1, &amp; \text&#123;if &#125; n\text&#123; is odd&#125;</span><br><span class="line"> \end&#123;cases&#125;</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">$$f</span><br><span class="line">(x): \begin&#123;cases&#125; x, x&gt;0 \\\ -x,x&lt;0 \end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure></p>
 <script type="math/tex; mode=display">
 f(n) = \begin{cases}
  \frac{n}{2},
@@ -320,36 +320,28 @@ f(x): \begin{cases} x, x>0 \\\ -x,x<0 \end{cases}</script><h3 id="5-总结"><a h
 
 
   
-<!-- mathjax config similar to math.stackexchange -->
-
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
+    menuSettings: {
+      zoom: "None"
+    },
+    showMathMenu: false,
+    jax: ["input/TeX","output/CommonHTML"],
+    extensions: ["tex2jax.js"],
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
     tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
+      inlineMath: [["\\(", "\\)"]],
+      displayMath: [["\\[", "\\]"]]
     }
   });
 </script>
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script>
 
 
 <a id="gotop" href="#">   
