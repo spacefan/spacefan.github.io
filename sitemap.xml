@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://spacefan.github.io/2018/06/27/MathJax/</loc>
+    <loc>http://spacefan.github.io/2018/06/27/hexo-MathJax/</loc>
     
-    <lastmod>2018-06-29T15:54:20.452Z</lastmod>
+    <lastmod>2018-06-30T09:16:42.901Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://spacefan.github.io/2018/06/27/hexo-emoji/</loc>
+    
+    <lastmod>2018-06-30T09:12:47.009Z</lastmod>
     
   </url>
   
