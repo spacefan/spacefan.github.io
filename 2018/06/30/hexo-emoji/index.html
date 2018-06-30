@@ -136,12 +136,15 @@
 		 </div> <!-- alert -->
 	  		
 
-	  <p>将 Markdown 转化为 html 的过程叫做 Markdown 渲染，对应的插件叫做 Markdown 渲染引擎。</p>
-<p>在 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 中默认的 Markdown 渲染器是 <a href="https://github.com/hexojs/hexo-renderer-marked" target="_blank" rel="noopener">hexo-renderer-marked</a>，这个渲染器不支持 emoji 表情。本文介绍使用 <a href="https://github.com/crimx/hexo-filter-github-emojis" target="_blank" rel="noopener">hexo-filter-github-emojis</a> 在博客中实现 emoji 表情。</p>
+	  <p>将 Markdown 转化为 html 的过程叫做 Markdown 渲染，对应的插件叫做 Markdown 渲染引擎。在 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 中默认的 Markdown 渲染器是 <a href="https://github.com/hexojs/hexo-renderer-marked" target="_blank" rel="noopener">hexo-renderer-marked</a>，这个渲染器不支持 emoji 表情。本文利用 <a href="https://github.com/crimx/hexo-filter-github-emojis" target="_blank" rel="noopener">hexo-filter-github-emojis</a> 在博客中实现 emoji 表情。</p>
 <a id="more"></a>
-<h4 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-filter-github-emojis --save</span><br></pre></td></tr></table></figure>
-<h4 id="启用插件"><a href="#启用插件" class="headerlink" title="启用插件"></a>启用插件</h4><p>向站点配置文件 <code>hexo_root\_config.yml</code> 中添加如下设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">githubEmojis:</span><br><span class="line">  enable: true</span><br><span class="line">  className: github-emoji</span><br><span class="line">  unicode: false</span><br><span class="line">  styles:</span><br><span class="line">  localEmojis:</span><br></pre></td></tr></table></figure></p>
-<p>具体的每个配置项含义可以看 <a href="https://github.com/crimx/hexo-filter-github-emojis" target="_blank" rel="noopener">说明文档</a>。</p>
+<h3 id="1-插件安装"><a href="#1-插件安装" class="headerlink" title="1. 插件安装"></a>1. 插件安装</h3><hr>
+<p>使用以下命令安装 <a href="https://github.com/crimx/hexo-filter-github-emojis" target="_blank" rel="noopener">hexo-filter-github-emojis</a> 插件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-filter-github-emojis --save</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-启用插件"><a href="#2-启用插件" class="headerlink" title="2. 启用插件"></a>2. 启用插件</h3><hr>
+<p>向站点配置文件 <code>hexo_root\_config.yml</code> 中添加如下设置：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">githubEmojis:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  className:</span> <span class="string">github-emoji</span></span><br><span class="line"><span class="attr">  unicode:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  styles:</span></span><br><span class="line"><span class="attr">    display:</span> <span class="string">inline</span></span><br><span class="line"><span class="attr">    vertical-align:</span> <span class="string">middle</span> <span class="comment"># Freemind适用</span></span><br><span class="line"><span class="attr">  localEmojis:</span></span><br></pre></td></tr></table></figure></p>
+<p>具体的每个配置项含义参见 <a href="https://github.com/crimx/hexo-filter-github-emojis" target="_blank" rel="noopener">说明文档</a>。</p>
+<h3 id="3-使用方法"><a href="#3-使用方法" class="headerlink" title="3. 使用方法"></a>3. 使用方法</h3><hr>
+<p>在 <a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/" target="_blank" rel="noopener">emoji-cheat-sheet</a> 中找到你想要的表情，然后点击即可复制。使用方法和 <a href="https://github.com" target="_blank" rel="noopener">GitHub</a> 一样，比如你想发一个笑脸 <span class="github-emoji" style="display:inline;vertical-align:middle" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png?v8">&#x1f604;</span> 直接输入笑脸对应的 emoji 编码 <code>:smile：</code> 就可以。来一波表情 <span class="github-emoji" style="display:inline;vertical-align:middle" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60d.png?v8">&#x1f60d;</span> <span class="github-emoji" style="display:inline;vertical-align:middle" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png?v8">&#x1f604;</span> <span class="github-emoji" style="display:inline;vertical-align:middle" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f602.png?v8">&#x1f602;</span> <span class="github-emoji" style="display:inline;vertical-align:middle" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2728.png?v8">&#x2728;</span> <span class="github-emoji" style="display:inline;vertical-align:middle" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f3b5.png?v8">&#x1f3b5;</span> <span class="github-emoji" style="display:inline;vertical-align:middle" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44c.png?v8">&#x1f44c;</span> <span class="github-emoji" style="display:inline;vertical-align:middle" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png?v8">&#x1f44d;</span>。</p>
 	  
 	</div>
 
@@ -154,13 +157,13 @@
 <ul class="pagination">
 	 
 				
-    	<li class="prev"><a href="/2018/06/27/hexo-MathJax/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+    	<li class="prev"><a href="/2018/06/30/cesium-intro/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
   		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2017/07/29/GMAT2017a/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2018/06/28/OpenTools/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -231,7 +234,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2018-06-27 
+	2018-06-30 
 	</div>
 	
 
@@ -265,7 +268,7 @@
 	
 	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
 	   <div id="toc" class="toc collapse in">
-			<ol class="toc-article"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#插件安装"><span class="toc-article-text">插件安装</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#启用插件"><span class="toc-article-text">启用插件</span></a></li></ol>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#1-插件安装"><span class="toc-article-text">1. 插件安装</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#2-启用插件"><span class="toc-article-text">2. 启用插件</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#3-使用方法"><span class="toc-article-text">3. 使用方法</span></a></li></ol>
 		</div>
 	
 	</div>
