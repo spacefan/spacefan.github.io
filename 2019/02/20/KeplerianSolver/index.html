@@ -144,7 +144,7 @@
 <script type="math/tex; mode=display">
 f(E(t))=E(t)-esinE(t)-M(t)=0</script><p>它描述了线性时间 <script type="math/tex">t</script> 下偏近角 <script type="math/tex">E(t)</script> 和平近角 <script type="math/tex">M(t)</script> 之间的非线性转换关系。式中，<script type="math/tex">e</script> 为轨道偏心率，<script type="math/tex">M(t) = n(t-\tau)</script> 为平近角。其中，<script type="math/tex">n = \sqrt{\mu / a^3}</script> 表示二体模型中的平运动，<script type="math/tex">\tau</script> 为天体（或卫星）飞越近地点后累积的时长，<script type="math/tex">a</script> 为轨道半长轴。</p>
 <p>实际计算中，有两种情况需要求解开普勒方程，一是已知真近角 <script type="math/tex">\theta</script>，求平近角 <script type="math/tex">M</script>；另外则是已知平近角 <script type="math/tex">M</script>，求偏近角 <script type="math/tex">\theta</script>。可见偏近角 <script type="math/tex">E</script> 只是过程量，真近角 <script type="math/tex">\theta</script> 和 <script type="math/tex">M</script> 才是最终想要的结果量。在航天动力学中偏近角 <script type="math/tex">\theta</script> 本就是不真实的虚拟量，但它与真近角 <script type="math/tex">\theta</script> 存在直观的几何关系，如图 1 所示。当然平近角 <script type="math/tex">M</script> 也是不真实的虚拟量，它必须通过偏近角和开普勒方程与真近角实现数值上的转换。</p>
-<p><img src="/spacefan/images/orekit/keplerian1.png" alt="真近角和偏近角之间的几何关系"></p>
+<p><img src="/spacefan/images/AstroDyn/keplerian1.png" alt="真近角和偏近角之间的几何关系"></p>
 <center> 图 1: 真近角和偏近角之间的几何关系 </center>
 
 <p>开普勒方程属于超越方程，故需采用数值法才能求得精确值。理想情况下，一个数值方法是否实用，应该看它是否同时具备以下两点：</p>
