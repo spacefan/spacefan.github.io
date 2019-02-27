@@ -89,11 +89,11 @@
       
         <tags>
             
-            <tag> Orekit </tag>
+            <tag> Space </tag>
             
             <tag> 航天动力学 </tag>
             
-            <tag> Space </tag>
+            <tag> Orekit </tag>
             
             <tag> 轨道根数 </tag>
             
@@ -236,8 +236,6 @@
             
             <tag> GMAT </tag>
             
-            <tag> Orekit </tag>
-            
             <tag> 航天 </tag>
             
             <tag> 开源 </tag>
@@ -275,6 +273,8 @@
             <tag> STELA </tag>
             
             <tag> Tudat </tag>
+            
+            <tag> Orekit </tag>
             
             <tag> SaVi </tag>
             
@@ -372,9 +372,9 @@
       
         <tags>
             
-            <tag> ORBITER </tag>
-            
             <tag> Space </tag>
+            
+            <tag> ORBITER </tag>
             
             <tag> 模拟航天 </tag>
             
@@ -397,9 +397,9 @@
       
         <tags>
             
-            <tag> ORBITER </tag>
-            
             <tag> Space </tag>
+            
+            <tag> ORBITER </tag>
             
             <tag> 模拟飞行 </tag>
             
