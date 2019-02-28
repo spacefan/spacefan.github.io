@@ -99,6 +99,8 @@
             
             <tag> 轨道预报 </tag>
             
+            <tag> Java </tag>
+            
         </tags>
       
     </entry>
@@ -145,8 +147,6 @@
       
         <tags>
             
-            <tag> Code::Blocks </tag>
-            
             <tag> IDE </tag>
             
             <tag> c </tag>
@@ -156,6 +156,8 @@
             <tag> 编辑器 </tag>
             
             <tag> 主题美化 </tag>
+            
+            <tag> CodeBlocks </tag>
             
         </tags>
       
@@ -332,6 +334,16 @@
             
             <tag> 开源软件 </tag>
             
+            <tag> Python </tag>
+            
+            <tag> IPython </tag>
+            
+            <tag> NumPy </tag>
+            
+            <tag> SciPy </tag>
+            
+            <tag> R </tag>
+            
         </tags>
       
     </entry>
@@ -352,6 +364,20 @@
         <tags>
             
             <tag> GMAT </tag>
+            
+            <tag> Space </tag>
+            
+            <tag> 航天 </tag>
+            
+            <tag> 任务分析 </tag>
+            
+            <tag> 轨道设计 </tag>
+            
+            <tag> 轨迹优化 </tag>
+            
+            <tag> NASA </tag>
+            
+            <tag> GSFC </tag>
             
         </tags>
       

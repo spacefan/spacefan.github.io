@@ -3,7 +3,7 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>Code::Blocks | Home</title>
+  <title>R | Home</title>
   <meta name="author" content="Spacefan">
   
   <meta name="description" content="Personal blog of Spacefan">
@@ -102,7 +102,7 @@
 
 <!-- title -->
 <div class="page-header page-header-inverse ">
-  <h1 class="archive-title-tag title title-inverse ">Code::Blocks</h1>
+  <h1 class="archive-title-tag title title-inverse ">R</h1>
 </div>
 
 <div class="row page">
@@ -121,8 +121,8 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
-			<div class="date"> 2018-11-30 </div>
-			<div class="article-title"><a href="/2018/11/30/Codeblocksv1712/" title="基于 Code::Blocks v17.12 的界面汉化与编辑器主题美化">CodeBlocks v17.12 界面汉化与编辑器主题美化</a></div>						
+			<div class="date"> 2017-10-28 </div>
+			<div class="article-title"><a href="/2017/10/28/sage-intro/" title="[SageMath](https://www.sagemath.org) 是一款功能强大的开源数学软件，基于 [Python](https://www.python.org/) 语言整合开发而成~~，本文对其作简要介绍，希望能抛砖引玉，使更多人了解它。">这个星球上最强大的开源数学软件</a></div>						
 		</h3>
 	
 
@@ -131,16 +131,15 @@
   <div class="row">
 	
            
-              <div class="thumbnail"><a href="/2018/11/30/Codeblocksv1712/"><img src="/images/codeblocks/codeblocks.png" alt="CodeBlocks v17.12 界面汉化与编辑器主题美化"  class="nofancybox"></a>
+              <div class="thumbnail"><a href="/2017/10/28/sage-intro/"><img src="/images/sagemath2.png" alt="这个星球上最强大的开源数学软件"  class="nofancybox"></a>
            
 		</div>
 	
 	
-		<p><a href="http://codeblocks.org/" target="_blank" rel="noopener">Code::Blocks</a> 是一个非常优秀的 IDE，它轻巧、强大、跨平台，且紧跟标准，最新版更是加入了对 <a href="https://www.qt.io/" target="_blank" rel="noopener">Qt5</a> 的支持。然而，这么一个令人爱不释手的 IDE 竟无汉化，编辑器主题界面也十分简陋，于是便有了本博文。</p>
-<p>本文将以 <a href="https://sourceforge.net/projects/codeblocks/files/Binaries/17.12/" target="_blank" rel="noopener">Code::Blocks v17.12</a> 为对象，介绍其菜单汉化及编辑器主题优化方法，配置后的软件有助于我们更赏心悦目度撸代码。<span class="github-emoji" style="display:inline;vertical-align:middle" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8">&#x1f604;</span> <span class="github-emoji" style="display:inline;vertical-align:middle" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8">&#x1f604;</span> <span class="github-emoji" style="display:inline;vertical-align:middle" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8">&#x1f604;</span></p>
+		<h3 id="1-基本简介"><a href="#1-基本简介" class="headerlink" title="1. 基本简介"></a>1. 基本简介</h3><p><a href="https://www.sagemath.org" target="_blank" rel="noopener">SageMath</a> 是一款由 <a href="https://wstein.org/" target="_blank" rel="noopener">William A. Stein</a> 主导开发的基于 <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL</a> 协议的开源数学软件。它使用 <a href="https://www.python.org/" target="_blank" rel="noopener">Python</a> 作为通用接口，并将现有的许多开源软件包整合在一起，构建一个统一的计算平台，如 <a href="http://numpy.scipy.org/" target="_blank" rel="noopener">NumPy</a>, <a href="http://www.scipy.org/" target="_blank" rel="noopener">SciPy</a>, <a href="http://matplotlib.sourceforge.net/" target="_blank" rel="noopener">matplotlib</a>, <a href="http://www.sympy.org/" target="_blank" rel="noopener">Sympy</a>, <a href="http://maxima.sourceforge.net/" target="_blank" rel="noopener">Maxima</a>, <a href="http://www.gap-system.org/" target="_blank" rel="noopener">GAP</a>, <a href="http://www.flintlib.org/" target="_blank" rel="noopener">FLINT</a>, <a href="http://www.r-project.org/" target="_blank" rel="noopener">R</a> 以及 <a href="https://www.sagemath.org/links-components.html" target="_blank" rel="noopener">更多</a>。<a href="https://www.sagemath.org" target="_blank" rel="noopener">SageMath</a> 的目标是创建一个有活力的自由开源软件以替代 <a href="http://magma.maths.usyd.edu.au/magma/" target="_blank" rel="noopener">Magma</a>，<a href="https://www.maplesoft.com/" target="_blank" rel="noopener">Maple</a>，<a href="https://www.wolfram.com/mathematica/" target="_blank" rel="noopener">Mathematica</a> 和 <a href="https://www.mathworks.com" target="_blank" rel="noopener">MATLAB</a>。</p>
 	
 	</div>
-  <a type="button" href="/2018/11/30/Codeblocksv1712/#more" class="btn btn-default more">阅读此文</a>
+  <a type="button" href="/2017/10/28/sage-intro/#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 	       
@@ -220,48 +219,48 @@
 		<h4>标签</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/emoji/">emoji<span>1</span></a></li>
+			<li><a href="/tags/CodeBlocks/">CodeBlocks<span>1</span></a></li>
 		
-			<li><a href="/tags/NPM/">NPM<span>1</span></a></li>
+			<li><a href="/tags/c/">c<span>1</span></a></li>
+		
+			<li><a href="/tags/NASA-Eyes/">NASA Eyes<span>1</span></a></li>
+		
+			<li><a href="/tags/开源软件/">开源软件<span>1</span></a></li>
+		
+			<li><a href="/tags/Celestlab/">Celestlab<span>1</span></a></li>
+		
+			<li><a href="/tags/CRRCSim/">CRRCSim<span>1</span></a></li>
+		
+			<li><a href="/tags/LEO/">LEO<span>1</span></a></li>
+		
+			<li><a href="/tags/C/">C++<span>1</span></a></li>
 		
 			<li><a href="/tags/X-Plane/">X-Plane<span>1</span></a></li>
 		
-			<li><a href="/tags/NASA/">NASA<span>1</span></a></li>
+			<li><a href="/tags/数字地球/">数字地球<span>1</span></a></li>
 		
-			<li><a href="/tags/开源/">开源<span>1</span></a></li>
+			<li><a href="/tags/AGI/">AGI<span>1</span></a></li>
 		
-			<li><a href="/tags/航空/">航空<span>1</span></a></li>
+			<li><a href="/tags/Teledesic/">Teledesic<span>1</span></a></li>
 		
-			<li><a href="/tags/Iridium/">Iridium<span>1</span></a></li>
+			<li><a href="/tags/航天动力学/">航天动力学<span>2</span></a></li>
 		
-			<li><a href="/tags/平近角/">平近角<span>1</span></a></li>
+			<li><a href="/tags/主题美化/">主题美化<span>1</span></a></li>
 		
-			<li><a href="/tags/Web/">Web<span>1</span></a></li>
+			<li><a href="/tags/轨道根数/">轨道根数<span>1</span></a></li>
 		
-			<li><a href="/tags/Orbiter/">Orbiter<span>1</span></a></li>
+			<li><a href="/tags/emoji/">emoji<span>1</span></a></li>
 		
-			<li><a href="/tags/GSFC/">GSFC<span>1</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>3</span></a></li>
 		
-			<li><a href="/tags/毫米波/">毫米波<span>1</span></a></li>
+			<li><a href="/tags/Sumo/">Sumo<span>1</span></a></li>
 		
-			<li><a href="/tags/KSPTOT/">KSPTOT<span>1</span></a></li>
+			<li><a href="/tags/Orekit/">Orekit<span>2</span></a></li>
 		
-			<li><a href="/tags/任务分析/">任务分析<span>1</span></a></li>
-		
-			<li><a href="/tags/仿真/">仿真<span>1</span></a></li>
-		
-			<li><a href="/tags/航天/">航天<span>2</span></a></li>
-		
-			<li><a href="/tags/Space/">Space<span>4</span></a></li>
-		
-			<li><a href="/tags/StarLink/">StarLink<span>1</span></a></li>
-		
-			<li><a href="/tags/鸿雁星座/">鸿雁星座<span>1</span></a></li>
-		
-			<li><a href="/tags/卫星通信/">卫星通信<span>1</span></a></li>
+			<li><a href="/tags/轨道预报/">轨道预报<span>1</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>78</span></a></li>
+		   <li><a href="/tags">...<span>85</span></a></li>
 		 
 		</ul>
 	</div>

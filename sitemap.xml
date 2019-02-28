@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2018/11/30/Codeblocksv1712/</loc>
+    
+    <lastmod>2019-02-28T00:02:59.441Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/07/29/GMAT2017a/</loc>
+    
+    <lastmod>2019-02-28T00:01:45.801Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>/2017/10/28/sage-intro/</loc>
     
-    <lastmod>2019-02-27T15:32:42.787Z</lastmod>
+    <lastmod>2019-02-27T23:58:39.707Z</lastmod>
     
   </url>
   
   <url>
     <loc>/2019/01/25/orekit_prop/</loc>
     
-    <lastmod>2019-02-27T15:32:15.060Z</lastmod>
+    <lastmod>2019-02-27T23:54:52.277Z</lastmod>
     
   </url>
   
@@ -86,23 +100,9 @@
   </url>
   
   <url>
-    <loc>/2018/11/30/Codeblocksv1712/</loc>
-    
-    <lastmod>2019-02-27T15:16:22.642Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>/2019/02/20/KeplerianSolver/</loc>
     
     <lastmod>2019-02-27T13:49:26.131Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/2017/07/29/GMAT2017a/</loc>
-    
-    <lastmod>2019-02-21T15:10:46.324Z</lastmod>
     
   </url>
   
