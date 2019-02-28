@@ -156,7 +156,7 @@ acosE = rcos \theta + ae</script><p>于是可得真近角和偏近角之间的�
 tan \theta = \frac{sin \theta}{cos \theta} = \frac{\sqrt{1-e^2} sinE}{cosE-e}  \\
 tanE = \frac{sinE}{cosE} = \frac{\sqrt{1-e^2} sin \theta}{e+cos \theta}</script><p>开普勒方程属于超越方程，故需采用数值法才能求得精确值。理想情况下，一个数值方法是否实用，应该看它是否同时具备以下两点：</p>
 <ul>
-<li>计算 <script type="math/tex">E</script> 的 <strong>CPU</strong> 时间是否最小化;</li>
+<li>计算 <script type="math/tex">E</script> 的 <strong>CPU</strong> 耗时是否最小化;</li>
 <li>程序的复杂度是否最小化。</li>
 </ul>
 <p>这两个需求往往是互相制约的，但幸运的是通过分析研究可以找到一个折中的方法来解决这个矛盾。开普勒方程只能通过迭代法求解，任何一个迭代过程的设计都有两个任务：</p>
