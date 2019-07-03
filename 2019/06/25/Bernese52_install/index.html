@@ -1,0 +1,753 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>Bernese 5.2 在 Ubuntu 16.04.6 编译安装 | Home</title>
+  <meta name="author" content="Spacefan">
+  
+  <meta name="description" content="Bernese 是世界上三大著名高精度 GNSS 数据处理软件之一，当前 Bernese 软件可以购买的最新版本为 5.2，获得 Linux 版本源码后，可使用本文介绍的方法将其安装到运行 Ubuntu 16.04 操作系统的计算机上。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Bernese 5.2 在 Ubuntu 16.04.6 编译安装"/>
+  <meta property="og:site_name" content="Home"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/united.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight-default.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/comment.css" media="screen" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
+  <![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+  
+    <script src="/js/marked.js"></script>
+    <script src="/js/comment.js"></script>
+    <script src="/js/timeago.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+	<script src="/js/spin.min.js"></script>
+  
+  <!-- analytics --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+</head>
+
+ <body>  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="所有文章">
+			  <i class="fa fa-archive"></i>归档
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="文章分类">
+			  <i class="fa fa-folder"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="关键词索引">
+			  <i class="fa fa-tags"></i>标签
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="关于我">
+			  <i class="fa fa-user"></i>关于
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> Bernese 5.2 在 Ubuntu 16.04.6 编译安装</h1>
+		</div>		
+	
+
+
+
+
+   <style type="text/css">
+           img, video {
+                -webkit-box-shadow:0 0 10px rgba(0, 0, 0, .5);  
+                -moz-box-shadow:0 0 10px rgba(0, 0, 0, .5);  
+                box-shadow:0 0 10px rgba(0, 0, 0, .5);  
+           }
+   </style>
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  
+		 <div class="alert alert-success description">
+			<i class="fa fa-info-circle"></i> <p>Bernese 是世界上三大著名高精度 GNSS 数据处理软件之一，当前 Bernese 软件可以购买的最新版本为 5.2，获得 Linux 版本源码后，可使用本文介绍的方法将其安装到运行 Ubuntu 16.04 操作系统的计算机上。</p>
+			
+		 </div> <!-- alert -->
+	  		
+
+	  <p><a href="http://www.bernese.unibe.ch/" target="_blank" rel="noopener">Bernese</a> 是三大著名的高精度 GNSS 数据处理软件之一。由瑞士伯尔尼大学天文学院（ Astronomical Institute of the University of Bern，<a href="http://www.aiub.unibe.ch/" target="_blank" rel="noopener">AIUB</a>）开发，能够处理包括  GPS、GLONASS 和卫星激光测距（SLR）等多种观测数据。该程序支持 Windows 和 UNIX/Linux  操作系统，具有图形界面（使用 <a href="https://www.qt.io/" target="_blank" rel="noopener">Qt</a>  实现），操作友好，模型准确，解算精度高，并且具有强大的数据批处理能力。</p>
+<p>当前 Bernese 软件可以购买的最新版本为 5.2，获得 Linux 版本源码后，可使用本文介绍的方法将其安装到运行 Ubuntu 16.04 操作系统的计算机上。<a id="more"></a>本文主要有三部分内容，前两部分都是关于 Linxu 系统的（由于很久不用 Linux 了，所以想趁此机会留下笔记，方便以后拾遗），熟悉 Linux 的童鞋可以忽略，直奔第三部分。</p>
+<h2 id="1-Ubuntu-16-04-安装与优化"><a href="#1-Ubuntu-16-04-安装与优化" class="headerlink" title="1. Ubuntu 16.04 安装与优化"></a>1. Ubuntu 16.04 安装与优化</h2><p>Ubuntu16.04 是 Canonical 公司于 2016 年发布的长期支持版本（<strong>L</strong>ong <strong>T</strong>ime <strong>S</strong>upport, <strong>LTS</strong>），目前版本号已升至 <strong>16.04.6</strong>，本文系统环境使用该版本，下载地址：<a href="http://releases.ubuntu.com/xenial/" target="_blank" rel="noopener">http://releases.ubuntu.com/xenial/</a>。</p>
+<p>根据需求选择 32 位 <a href="http://releases.ubuntu.com/xenial/ubuntu-16.04.6-desktop-i386.iso" target="_blank" rel="noopener">ubuntu-16.04.6-desktop-i386.iso</a> 或 64 位 <a href="http://releases.ubuntu.com/xenial/ubuntu-16.04.6-desktop-amd64.iso" target="_blank" rel="noopener">ubuntu-16.04.6-desktop-amd64.iso</a>，安装步骤就不叙述了，网上很多教程，如果不想使用真机环境，可在虚拟机下安装。这里重点讲下安装后要做的一些优化，其中标题后面带有 <strong>（Optional）</strong> 的指可选优化项目。</p>
+<h3 id="1-1-更新软件源"><a href="#1-1-更新软件源" class="headerlink" title="1.1 更新软件源"></a>1.1 更新软件源</h3><p>安装好 Ubuntu 后，第一件事就是更新软件源，因为这会节约很多时间。阿里云源在国内应该最快（网易 163 源速度也还不错），此处使用阿里云源。<strong><code>Ctr+Alt+T</code></strong> 打开终端，执行命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak #备份</span><br><span class="line">sudo gedit /etc/apt/sources.list #修改软件源地址</span><br><span class="line">sudo apt-get update #更新列表</span><br></pre></td></tr></table></figure>
+<p>第二行命令后需添加的阿里云源地址如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">deb-src http://archive.ubuntu.com/ubuntu xenial main restricted #Added by software-properties</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted multiverse universe #Added by software-properties</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted multiverse universe #Added by software-properties</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial universe</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-updates universe</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-updates multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse #Added by software-properties</span><br><span class="line">deb http://archive.canonical.com/ubuntu xenial partner</span><br><span class="line">deb-src http://archive.canonical.com/ubuntu xenial partner</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted multiverse universe #Added by software-properties</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-security multiverse</span><br></pre></td></tr></table></figure>
+<p>当然，也可以使用 <strong><code>software &amp; update</code></strong> 即 <strong><code>软件和更新</code></strong> 更新，图形化的界面可能更加直观。</p>
+<p>设置完软件源后，更新软件源并升级系统：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade </span><br><span class="line"><span class="meta">#</span> 或分步执行</span><br><span class="line"><span class="meta">#</span> sudo apt-get update</span><br><span class="line"><span class="meta">#</span> sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-Unity-桌面环境调整（Optional）"><a href="#1-2-Unity-桌面环境调整（Optional）" class="headerlink" title="1.2 Unity 桌面环境调整（Optional）"></a>1.2 Unity 桌面环境调整（Optional）</h3><p>Unity 是 Ubuntu 自己打造的桌面环境，有人认为  Unity 桌面环境糟糕的设计使很多 Ubuntu 用户不满，使其转向  Linux Mint 等非 Unity 桌面系列系统。</p>
+<p>Unity 优化工具 <strong><code>Unity Tweak Tool</code></strong>，可用来调整外观设置、鼠标、Unity 启动器、窗口行为等选项，可直接在 <strong><code>Ubuntu软件中心</code></strong> 搜索安装或使用命令： </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install unity-tweak-tool</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-安装Linux显卡驱动"><a href="#1-3-安装Linux显卡驱动" class="headerlink" title="1.3 安装Linux显卡驱动"></a>1.3 安装Linux显卡驱动</h3><p>Ubuntu 16.04 支持大多数 Nvidia 和 Intel 显示硬件，安装适配的显卡驱动之后 Ubuntu 可以获得非常流畅的统一桌面体验。 在 <strong><code>软件和更新</code></strong> -&gt; <strong><code>附加驱动</code></strong> 选项卡中进行选择。对于使用 Nvidia 的用户，可以通过 PPA 为 Ubuntu 安装 Nvidia 驱动。</p>
+<p><img src="/images/GNSS/Bernese/Ubuntu_drive.jpg" alt="Ubuntu 驱动安装界面"></p>
+<blockquote>
+<p><strong>注意</strong>：在虚拟中使用 Ubuntu，无需安装显卡驱动。</p>
+</blockquote>
+<h3 id="1-4-搜狗输入法Linux版本"><a href="#1-4-搜狗输入法Linux版本" class="headerlink" title="1.4 搜狗输入法Linux版本"></a>1.4 搜狗输入法Linux版本</h3><p>UbuntuKylin 团队与搜狗输入法合作开发的搜狗输入法Linux版本已经推出多年，下载地址： <a href="http://pinyin.sogou.com/linux/，下载后直接点击安装即可。" target="_blank" rel="noopener">http://pinyin.sogou.com/linux/，下载后直接点击安装即可。</a></p>
+<h3 id="1-5-安装-Ubuntu-受限的额外的解码器"><a href="#1-5-安装-Ubuntu-受限的额外的解码器" class="headerlink" title="1.5 安装 Ubuntu 受限的额外的解码器"></a>1.5 安装 Ubuntu 受限的额外的解码器</h3><p><strong><code>Ubnutu 额外受限</code></strong> 指的是这些解码器的包没有默认安装在 Ubuntu 系统里面，这些解码器没有默认安装在系统里面的原因是受到很多国家的法律的约束。在这些解码器安装完以后可正常播放很多格式的音视频文件，如 MP3，MP4，AVI 和以及其他的一些格式。使用下面的命令进行安装：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ubuntu-restricted-extras</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> <strong>注意</strong>：对于初学者，如果屏幕上出现那些协议和条款，按 <strong><code>Tab</code></strong> 键在选项之间切换，使用 <strong><code>Enter</code></strong> 确认选择。</p>
+</blockquote>
+<h3 id="1-6-安装-adobe-flash-播放器（Optional）"><a href="#1-6-安装-adobe-flash-播放器（Optional）" class="headerlink" title="1.6 安装 adobe-flash 播放器（Optional）"></a>1.6 安装 adobe-flash 播放器（Optional）</h3><p>通常在安装完 Ubuntu 的受限额外的解码器后，你应该想通过 <strong><code>flash 播放器</code></strong> 看视频。可能因为一个问题或者其他的原因在安装 <strong><code>flash播放器</code></strong> 上遇见的问题。使用下面的命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install flashplugin-installer</span><br></pre></td></tr></table></figure>
+<h3 id="1-7-安装-Typora-编辑器（Optional）"><a href="#1-7-安装-Typora-编辑器（Optional）" class="headerlink" title="1.7 安装 Typora 编辑器（Optional）"></a>1.7 安装 Typora 编辑器（Optional）</h3><p>Typora 是优秀的 Markdown 编辑器，便于日常笔记写作。Typora 不在 Ubuntu 默认软件仓库中，需要先添加仓库，再行安装。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 若报错，执行注释行</span><br><span class="line"><span class="meta">#</span> sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE</span><br><span class="line">wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 添加 Typora 软件仓库</span><br><span class="line">sudo add-apt-repository 'deb https://typora.io/linux ./'</span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 安装 Typora</span><br><span class="line">sudo apt-get install typora</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意</strong>：Typroa 在 Ubuntu 下可能一不小心就进入全局菜单下的全屏模式了，通过快捷键 <strong><code>F11</code></strong> 切换即可。</p>
+</blockquote>
+<h3 id="1-8-安装-Oracle-Java（Optional）"><a href="#1-8-安装-Oracle-Java（Optional）" class="headerlink" title="1.8 安装 Oracle Java（Optional）"></a>1.8 安装 Oracle Java（Optional）</h3><p>由于系统自带的是 OpenJDK，卸载 OpenJDK 之后会带有残留，导致运行 <code>$ java -version</code> 时第一行不是 java 的版本号，会是 <code>Picked up JAVA_TOOL_OPTIONS: -javaagent:/usr/share/java/jayatanaag.jar</code> 这个提示，导致很多检测 java 版本号的脚本会运行出错，因此需要手动清除残留。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /usr/share/upstart/sessions/jayatana.conf</span><br></pre></td></tr></table></figure>
+<p>删除 <code>/usr/share/upstart/sessions/jayatana.conf</code> 文件，重启之后再运行 <code>$ java -version</code> 就不会再有 <code>Picked up JAVA_TOOL_OPTIONS: -javaagent:/usr/share/java/jayatanaag.jar</code> 提示了。然后用如下命令安装 Oracle Java：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 添加 Oracle Java 8 软件仓库</span><br><span class="line">sudo add-apt-repository ppa:webupd8team/java    </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 更新软件源</span><br><span class="line">sudo apt-get update    </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 安装 Oracle Java 8</span><br><span class="line">sudo apt-get install oracle-java8-installer</span><br></pre></td></tr></table></figure>
+<h3 id="1-9-其他微调整（Optional）"><a href="#1-9-其他微调整（Optional）" class="headerlink" title="1.9 其他微调整（Optional）"></a>1.9 其他微调整（Optional）</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 删除卡顿的 Libreoffice</span><br><span class="line">sudo apt-get remove libreoffice-common  </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 删除 Amazon 链接</span><br><span class="line">sudo apt-get remove unity-webapps-common  </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 删掉基本不用的自带软件，用的时候再安装</span><br><span class="line">sudo apt-get remove thunderbird totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot gnome-mines cheese transmission-common gnome-orca webbrowser-app gnome-sudoku landscape-client-ui-install onboard deja-dup</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 安装上古神器 Vim</span><br><span class="line">sudo apt-get install vim</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 安装新立得软件包管理器，也可在软件中心搜索安装</span><br><span class="line">sudo apt-get install synaptic</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 系统默认不带解压缩 .rar 文件的功能，手动安装 unrar 程序</span><br><span class="line">sudo apt-get install unrar</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 装上之后就可以用命令解压缩 .rar 文件了，使用如下命令解压缩文件到当前目录</span><br><span class="line">unrar x test.rar</span><br></pre></td></tr></table></figure>
+<h2 id="2-Linux-基础命令与用户权限"><a href="#2-Linux-基础命令与用户权限" class="headerlink" title="2. Linux 基础命令与用户权限"></a>2. Linux 基础命令与用户权限</h2><p>Linux 系统的一大特色就是使用命令进行日常操作和系统管理，新手可能会感觉不太适应，但熟悉以后会发现命令其实是非常高效的执行方式。该部分内容介绍 Linxu 下的基础命令、用户权限以及用户和密码管理等基本概念。</p>
+<h3 id="2-1-卸载软件（以-Gnome-的卸载为例）"><a href="#2-1-卸载软件（以-Gnome-的卸载为例）" class="headerlink" title="2.1 卸载软件（以 Gnome 的卸载为例）"></a>2.1 卸载软件（以 Gnome 的卸载为例）</h3><p>Ubuntu 18.04 之前的发型版本都对 <strong>Gnome</strong> 桌面环境不友好，若是体验后想卸载，可按照以下命令进行，卸载流程可借鉴至其他软件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 卸载掉 gnome-shell 主程序</span><br><span class="line">sudo apt-get remove gnome-shell</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 卸载掉 gnome，并删除其配置文件</span><br><span class="line">sudo apt-get --purge remove</span><br><span class="line"><span class="meta">#</span> 或分步执行</span><br><span class="line"><span class="meta">#</span> sudo apt-get remove gnome</span><br><span class="line"><span class="meta">#</span> sudo apt-get purge gnome</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 1）卸载不需要的依赖关系</span><br><span class="line">sudo apt-get autoremove</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 2）清理安装 gnome 时候留下的缓存程序软件包</span><br><span class="line">sudo apt-get autoclean</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 3）清理系统所有的缓存程序软件包</span><br><span class="line">sudo apt-get clean</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意</strong>：若是在图形界面卡死，可快捷键 <strong><code>Ctrl+Alt+F1~F6</code></strong> 调出终端，抑或进入恢复模式（黑屏情况下显卡出现问题只能在无图形化界面下进行操作）。</p>
+</blockquote>
+<h3 id="2-2-文件-文件夹的复制、移动和删除"><a href="#2-2-文件-文件夹的复制、移动和删除" class="headerlink" title="2.2 文件/文件夹的复制、移动和删除"></a>2.2 文件/文件夹的复制、移动和删除</h3><p>Linux 下文件的复制、移动与删除命令为：<code>cp</code>，<code>mv</code>，<code>rm</code>，若遇权限问题需在前面加：<code>sudo</code>。</p>
+<h4 id="2-2-1-文件复制命令：cp"><a href="#2-2-1-文件复制命令：cp" class="headerlink" title="2.2.1 文件复制命令：cp"></a>2.2.1 文件复制命令：<code>cp</code></h4><ul>
+<li><p>命令格式</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp [-adfilprsu] source destination</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>参数说明</p>
+<ul>
+<li><code>-a</code>: 是指 archive 的意思，指复制所有的目录</li>
+<li><code>-d</code>: 若源文件为连接文件（link file），则复制连接文件属性而非文件本身</li>
+<li><code>-f</code>: 强制（force），若有重复或其它疑问时，不会询问用户，而强制复制</li>
+<li><code>-i</code>: 若目标文件（destination）已存在，在覆盖时会先询问是否真的操作</li>
+<li><code>-l</code>: 建立硬连接（hard link）的连接文件，而非复制文件本身</li>
+<li><code>-p</code>: 与文件的属性一起复制，而非使用默认属性</li>
+<li><code>-r</code>: 递归复制，用于目录的复制操作</li>
+<li><code>-s</code>: 复制成符号连接文件（symbolic link），即“快捷方式”文件</li>
+<li><code>-u</code>: 若目标文件比源文件旧，更新目标文件</li>
+</ul>
+</li>
+<li><p>操作示例</p>
+<p>如将 <code>/test1</code> 目录下的 <code>file1</code> 文件复制到 <code>/test3</code> 目录，并将文件名改为 <code>file2</code>，可输入以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /test1/file1 /test3/file2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="2-2-2-文件移动命令：mv"><a href="#2-2-2-文件移动命令：mv" class="headerlink" title="2.2.2 文件移动命令：mv"></a>2.2.2 文件移动命令：<code>mv</code></h4><ul>
+<li><p>命令格式</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv [-fiv] source destination</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>参数说明</p>
+<ul>
+<li><code>-f</code>: force，强制直接移动而不询问</li>
+<li><code>-i</code>: 若目标文件（destination）已经存在，就会询问是否覆盖</li>
+<li><code>-u</code>: 若目标文件已经存在，且源文件比较新，才会更新</li>
+</ul>
+</li>
+<li><p>操作示例</p>
+<p>如将 <code>/test1</code> 目录下的 <code>file1</code> 移动到 <code>/test3</code> 目录，并将文件名改为 <code>file2</code>，可输入以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /test1/file1 /test3/file2</span><br></pre></td></tr></table></figure>
+<p>移动当前目录所有文件到上一级目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv * ../ # .. 表示回到上一级目录</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="2-2-3-文件删除命令-rm"><a href="#2-2-3-文件删除命令-rm" class="headerlink" title="2.2.3 文件删除命令: rm"></a>2.2.3 文件删除命令: <code>rm</code></h4><ul>
+<li><p>命令格式</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm [-fir] 文件或目录</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>参数说明：</p>
+<ul>
+<li><code>-f</code>: 强制删除</li>
+<li><code>-i</code>: 交互模式，在删除前询问用户是否操作</li>
+<li><code>-r</code>: 递归删除，常用在目录的删除</li>
+</ul>
+</li>
+<li><p>操作示例</p>
+<p>如删除 <code>/test</code> 目录下的 <code>file1</code> 文件，可以输入以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -i /test/file1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-3-文件-文件夹权限管理"><a href="#2-3-文件-文件夹权限管理" class="headerlink" title="2.3 文件/文件夹权限管理"></a>2.3 文件/文件夹权限管理</h3><h4 id="2-3-1-Linux-用户权限简介"><a href="#2-3-1-Linux-用户权限简介" class="headerlink" title="2.3.1 Linux 用户权限简介"></a>2.3.1 Linux 用户权限简介</h4><p>Linux 内的一切皆文件，所以对于 Linux 下文件的管理就十分的重要了。Linux 下的文件权限分为三种：<code>r</code>（读），<code>w</code>（写），<code>x</code>（执行）。Ubuntu 下查看权限的命令为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls -l filename # 文件权限查询，filename 用于指定具体文件</span><br><span class="line">ls -ld folder  # 文件夹权限查询，folder 用于指定具体文件夹</span><br><span class="line">ll             # 查看目录下所有内容权限情况，也可在后面指定目录</span><br></pre></td></tr></table></figure>
+<p>如列出用户根目录下文件的权限情况，结果如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">spacefan@U1604:~$ ll</span><br><span class="line">总用量 152</span><br><span class="line">drwxr-xr-x 18 spacefan spacefan  4096 6月  23 18:58 ./</span><br><span class="line">drwxr-xr-x  3 root     root      4096 6月  12 05:51 ../</span><br><span class="line">-rw-------  1 spacefan spacefan  1490 6月  23 18:57 .bash_history</span><br><span class="line">-rw-r--r--  1 spacefan spacefan   220 6月  12 05:51 .bash_logout</span><br><span class="line">-rw-r--r--  1 spacefan spacefan  3771 6月  12 05:51 .bashrc</span><br><span class="line">drwxrwxrwx  4 spacefan spacefan  4096 6月  10 23:05 Bernesev5.2/</span><br><span class="line">drwx------ 14 spacefan spacefan  4096 6月  23 18:54 .cache/</span><br><span class="line">drwx------  3 spacefan spacefan  4096 6月  23 11:22 .compiz/</span><br><span class="line">drwx------ 19 spacefan spacefan  4096 6月  23 14:32 .config/</span><br><span class="line">drwx------  3 spacefan spacefan  4096 6月  12 05:56 .dbus/</span><br><span class="line">drwxr-xr-x  2 spacefan spacefan  4096 6月  12 05:56 Desktop/</span><br><span class="line">-rw-r--r--  1 spacefan spacefan    25 6月  23 12:09 .dmrc</span><br><span class="line">drwxr-xr-x  2 spacefan spacefan  4096 6月  12 05:56 Doc/</span><br><span class="line">drwxr-xr-x  2 spacefan spacefan  4096 6月  12 05:56 Download/</span><br><span class="line">drwx------  2 spacefan spacefan  4096 6月  23 16:22 .gconf/</span><br><span class="line">drwx------  3 spacefan spacefan  4096 6月  23 16:21 .gnupg/</span><br><span class="line">-rw-------  1 spacefan spacefan  3140 6月  23 16:22 .ICEauthority</span><br><span class="line">drwxr-xr-x  2 spacefan spacefan  4096 6月  12 05:56 Image/</span><br><span class="line">drwx------  3 spacefan spacefan  4096 6月  12 05:56 .local/</span><br><span class="line">drwx------  5 spacefan spacefan  4096 6月  12 06:01 .mozilla/</span><br><span class="line">drwxr-xr-x  2 spacefan spacefan  4096 6月  12 05:56 Music/</span><br><span class="line">drwx------  2 spacefan spacefan  4096 6月  12 05:56 .presage/</span><br><span class="line">-rw-r--r--  1 spacefan spacefan   655 6月  12 05:51 .profile</span><br><span class="line">-rw-r--r--  1 spacefan spacefan     0 6月  12 06:00 .sudo_as_admin_successful</span><br><span class="line">drwxr-xr-x  2 spacefan spacefan  4096 6月  12 05:56 Video/</span><br><span class="line">-rw-------  1 spacefan spacefan  1503 6月  23 18:24 .viminfo</span><br><span class="line">-rw-------  1 spacefan spacefan   150 6月  23 16:21 .Xauthority</span><br><span class="line">-rw-------  1 spacefan spacefan    84 6月  23 16:21 .xsession-errors</span><br><span class="line">-rw-------  1 spacefan spacefan  1172 6月  23 14:34 .xsession-errors.old</span><br><span class="line">-rw-rw-r--  1 spacefan spacefan 39425 6月  22 23:35 .zcompdump</span><br></pre></td></tr></table></figure>
+<p>可见权限表示一共有 10 位字符，其中：</p>
+<ul>
+<li><p>第 1 位字符代表档案类型</p>
+<ul>
+<li><code>-</code> 代表文件</li>
+<li><code>d</code> 代表是目录</li>
+<li><code>l</code> 代表链接</li>
+</ul>
+</li>
+<li><p>第 2~4 位字符表示拥有者（user）权限</p>
+<ul>
+<li>第 2 位字符代表拥有者是否有 <strong>读</strong> 权限</li>
+<li>第 3 位字符代表拥有者是否有 <strong>写</strong> 权限</li>
+<li>第 4 位字符代表拥有者是否有 <strong>执行</strong> 权限</li>
+</ul>
+</li>
+<li><p>第 5~7 位字符表示同组者（group）权限</p>
+<ul>
+<li>第 5 位字符代表同组者（group）是否有 <strong>读</strong> 权限</li>
+<li>第 6 位字符代表同组者（group）是否有 <strong>写</strong> 权限</li>
+<li>第 7 位字符代表同组者（group）是否有 <strong>执行</strong> 权限</li>
+</ul>
+</li>
+<li><p>第 8~10 位字符表示其他用户（other）权限</p>
+<ul>
+<li>第 8 位字符代表其他用户（other）是否有 <strong>读</strong> 权限</li>
+<li>第 9 位字符代表其他用户（other）是否有 <strong>写</strong> 权限</li>
+<li>第 10 位字符代表其他用户（other）是否有 <strong>执行</strong> 权限</li>
+</ul>
+</li>
+</ul>
+<p>其中，<code>r</code> 表示文件可以被读（read），<code>w</code> 表示文件可以被写（write），<code>x</code> 表示文件可以被执行（如果它是可执行程序的话），<code>-</code> 表示未被授予权限。</p>
+<h4 id="2-3-2-权限修改方法"><a href="#2-3-2-权限修改方法" class="headerlink" title="2.3.2 权限修改方法"></a>2.3.2 权限修改方法</h4><p>Linux 用 <code>chmod</code> 命令修改用户权限，其用法大致分为两种，1）指定某类用户的权限；2）同时指定三类用户的权限，语法为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod [-可选参数][&lt;权限范围&gt;+/-/=&lt;权限设置&gt;] 文件/目录</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>可选参数列表</p>
+<ul>
+<li><code>-c</code>：当发生改变时报告处理信息</li>
+<li><code>-f</code>：错误信息不输出</li>
+<li><code>-R</code>：处理指定目录及子目录下的所有文件</li>
+<li><code>-v</code>：运行时显示详细处理信息</li>
+</ul>
+</li>
+<li><p>指定某类用户的权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod [u/g/o/a] [+/-/=] [r/w/x] file</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>[u / g / o / a] 为权限范围，其中：</p>
+<ul>
+<li><code>u</code>：User，即文件或目录的拥有者 </li>
+<li><code>g</code>：Group，即文件或目录的所属群组</li>
+<li><code>o</code>：Other，除了文件或目录拥有者和所属群组外，其他用户都属于这个范围 </li>
+<li><code>a</code>：All，即全部用户</li>
+</ul>
+</li>
+<li><p>权限操作 </p>
+<ul>
+<li><code>+</code>：表示增加权限 </li>
+<li><code>-</code>：表示取消权限</li>
+<li><code>=</code>：表示取消之前的权限，并给予唯一的权限</li>
+</ul>
+</li>
+<li><p>权限代号 </p>
+<ul>
+<li><code>r</code>：读取权限，数字代号为 “4” </li>
+<li><code>w</code>：写入权限，数字代号为 “2” </li>
+<li><code>x</code>：执行权限，数字代号为 “1” </li>
+<li><code>-</code>：不具备任何权限，数字代号为 “0”</li>
+</ul>
+</li>
+<li><p>file：文件名（路径）</p>
+</li>
+</ul>
+<p>例如给 User 用户增加了对 <code>code</code> 目录下 <code>/readme.txt</code> 文件 <code>w</code> 和 <code>x</code> 的权限：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod u+rw code/readme.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>同时指定三类用户的权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod [xyz] file</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>  其中 <code>x</code>，<code>y</code>，<code>z</code> 分别指定 <code>User</code>、<code>Group</code>、<code>Other</code> 的权限；用三位二进制数表示 <code>r</code> , <code>w</code> , <code>x</code> 三种权限（注意顺序），其中 <code>0</code> 代表没有该权限，<code>1</code> 代表有该权限，如 <code>100</code> 则表示，有 <code>r</code> 权限，无 <code>wx</code> 权限；再将这个三位的二进制数转为十进制，则是 <code>x</code>（或<code>yz</code>）的值。</p>
+<ul>
+<li><code>User</code>: 7 = 111，表示具有 <code>rwx</code> 权限 </li>
+<li><code>Group</code>: 7 = 111，表示具有 <code>rwx</code> 权限 </li>
+<li><p><code>Other</code>: 4 = 100，表示只具有 <code>r</code> 权限，而没有 <code>wx</code> 权限</p>
+<p>例如给 <code>User</code> 和 <code>Group</code> ”读+写+执行“ 的权限（即 <code>rwx</code> ），并给 <code>Other</code> 只 ”读“（即 <code>r</code>）的权限：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 774 code/readme.txt</span><br></pre></td></tr></table></figure>
+<p>对当前所在目录下的所有非隐藏内容（Linux 下以 <code>.</code> 开头的为隐藏内容）做权限修改操作：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 774 * # “*” 为通配符，代表当前目录下所有非隐藏内容</span><br></pre></td></tr></table></figure>
+<p>对当前所在目录下的所有内容（包括以 <code>.</code> 开头的隐藏内容）做权限修改操作：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 774 . # “.” 代表当前所在目录</span><br></pre></td></tr></table></figure>
+<p>修改指定目录下所有内容（包括以 <code>.</code> 开头的隐藏内容）的权限:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R 774 code/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-4-用户和密码管理"><a href="#2-4-用户和密码管理" class="headerlink" title="2.4 用户和密码管理"></a>2.4 用户和密码管理</h3><h4 id="2-4-1-root-密码设置"><a href="#2-4-1-root-密码设置" class="headerlink" title="2.4.1 root 密码设置"></a>2.4.1 root 密码设置</h4><p>Ubuntu 普通用户第一次使用 <code>root</code> 需要设置 <code>root</code> 密码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br></pre></td></tr></table></figure>
+<p>两次输入相同密码后设置成功，然后执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure>
+<p>输入密码后即切换到了 <code>root</code> 用户。</p>
+<h4 id="2-4-2-root-amp-guest-登陆设置"><a href="#2-4-2-root-amp-guest-登陆设置" class="headerlink" title="2.4.2 root &amp; guest 登陆设置"></a>2.4.2 root &amp; guest 登陆设置</h4><p>Ubuntu 默认的登陆界面不能采用 <code>root</code> 账号登陆，但可使用 <code>guest</code> 访客登陆。将其改为可输入用户名的形式登陆，并删除访客登陆。</p>
+<ul>
+<li><p><strong>第一步</strong>：给 <code>root</code> 用户设置密码</p>
+<p>  见 <code>2.4.1</code> 小节。</p>
+</li>
+<li><p><strong>第二步</strong>：修改登陆界面的配置文件</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 若不具有修改权限，修改之</span><br><span class="line">sudo chmod 777 /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf</span><br></pre></td></tr></table></figure>
+<p>  在末尾增加两行后保存退出，如下所示：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[Seat:*]</span><br><span class="line">user-session=ubuntu</span><br><span class="line">greeter-show-manual-login=true</span><br><span class="line">allow-guest=false</span><br></pre></td></tr></table></figure>
+<p>  如果现在用 <code>root</code> 用户在图形界面登录会有错误：<code>读取 /root/.profile 时发生错误：mesg:tty n 还需要做修改</code>。继续下一步。</p>
+</li>
+<li><p><strong>第三步</strong>：编辑 <code>root</code> 配置文件</p>
+<p>  编辑 <code>/root/.profile</code> 文件：</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /root/.profile</span><br></pre></td></tr></table></figure>
+<p>  在末尾增加：tty -s &amp;&amp; mesg n || true，保存后退出：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># ~/.profile: executed by Bourne-compatible login shells.</span><br><span class="line"></span><br><span class="line">if [ &quot;$BASH&quot; ]; then</span><br><span class="line">  if [ -f ~/.bashrc ]; then</span><br><span class="line">    . ~/.bashrc</span><br><span class="line">  fi</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">tty -s &amp;&amp; mesg n || true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>第四步</strong>：重启系统</p>
+<p>重启系统后，上述修改生效，选择 <code>登陆</code> 按钮，输入 <code>root</code> 为登录用户，再输入密码。</p>
+</li>
+</ul>
+<h3 id="2-4-3-用户密码修改"><a href="#2-4-3-用户密码修改" class="headerlink" title="2.4.3 用户密码修改"></a>2.4.3 用户密码修改</h3><p>普通用户密码修改只能由 <code>root</code> 完成，操作过程及结果如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spacefan@U1604:~$ su root</span><br><span class="line">密码： </span><br><span class="line">root@U1604:/home/spacefan# passwd spacefan</span><br><span class="line">输入新的 UNIX 密码： </span><br><span class="line">重新输入新的 UNIX 密码： </span><br><span class="line">passwd：已成功更新密码</span><br></pre></td></tr></table></figure>
+<h2 id="3-Bernese-5-2-编译安装"><a href="#3-Bernese-5-2-编译安装" class="headerlink" title="3. Bernese 5.2 编译安装"></a>3. Bernese 5.2 编译安装</h2><h3 id="3-1-确认软件包内容"><a href="#3-1-确认软件包内容" class="headerlink" title="3.1 确认软件包内容"></a>3.1 确认软件包内容</h3><p>经过前面的大量铺垫，终于进入安装 Bernese 软件编译安装环节。首先检查安装文件是否齐全，一份完整的软件包至少包含以下文件：</p>
+<ul>
+<li>BERN52.tgz：主程序包；</li>
+<li>CAMPAIGN52.tgz：示例工程；</li>
+<li>DATAPOOL.tgz：输入数据；</li>
+<li>ICONS.tgz：程序图标；</li>
+<li>README：程序说明文档；</li>
+<li>SAVEDISK.tgz：输出数据；</li>
+<li>setup.sh：程序安装脚本。</li>
+</ul>
+<h3 id="3-2-安装依赖程序"><a href="#3-2-安装依赖程序" class="headerlink" title="3.2 安装依赖程序"></a>3.2 安装依赖程序</h3><p>Bernese 软件代码量庞大，计算部分主要采用 Fortran 语言编写，界面部分使用基于 <a href="https://www.qt.io/" target="_blank" rel="noopener">Qt</a> 的 C++ GUI 库实现，但也有一些 Perl 或 Shell 语言实现的脚本。在编译安装 Bernese 之前，你需要安装以下程序：</p>
+<ul>
+<li>依赖库文件；</li>
+<li>C++ 编译器；</li>
+<li>Fortran 编译器;</li>
+<li>Perl 5；</li>
+<li>Qt 4。</li>
+</ul>
+<p>目前，绝大部分的 Linux 发行版都已经自带了 Perl 5 解释器和 GNU C++（g++）编译器，当然也包括 Ubuntu。因此实际上只安装所需依赖库、Fortran 编译器和 Qt 4 即可。</p>
+<h4 id="3-2-1-安装依赖库"><a href="#3-2-1-安装依赖库" class="headerlink" title="3.2.1 安装依赖库"></a>3.2.1 安装依赖库</h4><p>Bernese 软件依赖于 X11 和 zlib，编译软件之前需要首先安装这些依赖。使用如下命令安装 X11 和 zlib：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libx11-dev</span><br><span class="line">sudo apt-get install libxext-dev</span><br><span class="line">sudo apt-get install libxtst-dev</span><br><span class="line">sudo apt-get install zlib1g-dev</span><br></pre></td></tr></table></figure>
+<h4 id="3-2-2-安装-GNU-Fortran"><a href="#3-2-2-安装-GNU-Fortran" class="headerlink" title="3.2.2 安装 GNU Fortran"></a>3.2.2 安装 GNU Fortran</h4><p>Fortran 编译器用于编译 Bernese 软件中使用 Fortran 语言编写的计算程序，在终端中使用如下命令安装 GNU Fortran（gfortran）编译器：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gfortran</span><br></pre></td></tr></table></figure>
+<h4 id="3-2-3-安装-Qt-4"><a href="#3-2-3-安装-Qt-4" class="headerlink" title="3.2.3 安装 Qt 4"></a>3.2.3 安装 Qt 4</h4><p>Bernese 的图形操作界面部分基于 Qt 开发，编译程序菜单时需要引用 Qt 4。从 Qt 4 的下载页面，下载 <a href="http://download.qt.io/archive/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz" target="_blank" rel="noopener">Qt 4.8.7 的 Linux 源代码</a> 进行编译。首先解压源代码文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf qt-everywhere-opensource-src-4.8.7.tar.gz</span><br></pre></td></tr></table></figure>
+<p>使用 <code>cd</code> 命令进入解压得到的文件夹，执行如下命令将 Qt 4 安装到 /usr/local/qt4 目录内：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo ./configure -release -opensource -static -prefix /usr/local/qt4</span><br><span class="line">sudo make                                                            </span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+<p>Qt 4 的编译安装过程需要耗费较长的时间，具体时长取决于你的计算机硬件配置，耐心等待其编译完成。然后设置环境变量 <code>QTDIR</code>，将其指向 Qt 4 的安装目录。切换至 <code>root</code> ，打开 bash 环境配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line">gedit ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>在文件末尾添加一下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># PATH for QT4.8</span><br><span class="line">export QTDIR=/usr/local/qt4</span><br><span class="line">export PARH=PATH:QTDIR/bin</span><br><span class="line">export MANPATH=$QTDIR/doc/man</span><br><span class="line">export LD_LIBRARY_PATH=$QTDIR/lib</span><br></pre></td></tr></table></figure>
+<p>也可以直接在终端设置环境变量：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export QTDIR="/usr/local/qt4"</span><br></pre></td></tr></table></figure>
+<p>至此，依赖环境已经配置完毕，可以开始安装 Bernese 了。</p>
+<h3 id="3-3-安装-Bernese"><a href="#3-3-安装-Bernese" class="headerlink" title="3.3 安装 Bernese"></a>3.3 安装 Bernese</h3><p>Bernese 程序为用户提供了安装引导脚本 <code>setup.sh</code>，执行该脚本并根据提示操作即可完成安装过程。Bernese  默认安装到当前用户的 Home 文件夹，但也可以安装到其他文件夹，完整安装需要约 500 MB 的磁盘空间。为了供多个用户使用，需要共享  BERN52 和 MENU.INP 的执行和修改权限。本示例将 Bernese 安装至 /opt 目录下。</p>
+<h4 id="3-3-1-格式转换"><a href="#3-3-1-格式转换" class="headerlink" title="3.3.1 格式转换"></a>3.3.1 格式转换</h4><p>进入安装文件目录，此处为 <code>~/Bernesev5.2/Bernese_v5.2_linux</code>，命令操作如下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spacefan@U1604:~$ cd Bernesev5.2/Bernese_v5.2_linux/</span><br><span class="line">spacefan@U1604:~/Bernesev5.2/Bernese_v5.2_linux$ pwd</span><br><span class="line">/home/spacefan/Bernesev5.2/Bernese_v5.2_linux</span><br></pre></td></tr></table></figure>
+<p>为了防止出现乱码，将 sh 转为 unix 格式，再运行。终端输入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install dos2unix</span><br><span class="line">dos2unix setup.sh</span><br></pre></td></tr></table></figure>
+<h4 id="3-3-2-安装-Bernese"><a href="#3-3-2-安装-Bernese" class="headerlink" title="3.3.2 安装 Bernese"></a>3.3.2 安装 Bernese</h4><p>通过 <code>root</code> 用户执行 Bernese 的安装引导脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line">sh setup.sh</span><br></pre></td></tr></table></figure>
+<p>之后程序提示输入 Bernese 软件的安装目录，这里的 <code>/root</code> 表示默认安装路径。我们将其安装到 <code>/opt/BERN52</code> 文件夹，因此输入：<code>/opt</code>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">spacefan@U1604:~/Bernesev5.2/Bernese_v5.2_linux$ su root</span><br><span class="line">密码： </span><br><span class="line">root@U1604:/home/spacefan/Bernesev5.2/Bernese_v5.2_linux# sh setup.sh </span><br><span class="line"></span><br><span class="line">***************************************</span><br><span class="line">*        Bernese GNSS Software        *</span><br><span class="line">*             Installation            *</span><br><span class="line">*  (UNIX/Linux or Mac OS X platform)  *</span><br><span class="line">***************************************</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Full path where the BERN52 software tree will be installed</span><br><span class="line">[ /root ]:</span><br><span class="line">/opt</span><br><span class="line"></span><br><span class="line">The software will be installed in /opt/BERN52</span><br></pre></td></tr></table></figure>
+<p>程序提示找到的 Perl 语言解释器位置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Perl program to be used [ /usr/bin/perl ]:</span><br></pre></td></tr></table></figure>
+<p>一般使用系统自带的 Perl 语言解释器就可以了，此处直接按 <strong><code>Enter</code></strong> 键回车。之后，配置文件 <code>configure.pm</code> 被启动，并在屏幕打印以下提示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">==========================================</span><br><span class="line">CONFIGURATION OF THE BERNESE GNSS SOFTWARE</span><br><span class="line">==========================================</span><br><span class="line"> 0 ... Complete installation (Steps 1 to 5)</span><br><span class="line"> 1 ... Update LOADGPS.setvar</span><br><span class="line"> 2 ... Install online updates (only after Step 1)</span><br><span class="line"> 3 ... Add a new user environment (only after Step 1)</span><br><span class="line"> 4 ... Compile the menu (only after Step 1)</span><br><span class="line"> 5 ... Compile the programs (only after Step 1)</span><br><span class="line"> 6 ... Install the example campaign (only after Step 1)</span><br><span class="line"> 7 ...   ---</span><br><span class="line"></span><br><span class="line"> x ... Exit</span><br><span class="line"></span><br><span class="line">Enter option:</span><br></pre></td></tr></table></figure>
+<p>解释一下此处的各个选项：</p>
+<ul>
+<li>键入 <strong><code>0</code></strong>：执行从第 1 项至第 5 项的全部过程</li>
+<li>键入 <strong><code>1</code></strong>：更新环境变量设置</li>
+<li>键入 <strong><code>2</code></strong>：安装在线更新包</li>
+<li>键入 <strong><code>3</code></strong>：添加新用户环境</li>
+<li>键入 <strong><code>4</code></strong>：编译图形界面菜单</li>
+<li>键入 <strong><code>5</code></strong>：编辑程序</li>
+<li>键入 <strong><code>6</code></strong>：安装解算工程示例</li>
+<li>键入 <strong><code>x</code></strong>： 退出安装程序</li>
+</ul>
+<p>由于存在一些坑，我们老老实实一步一步进行。键入 <strong><code>1</code></strong>，安装程序打印出支持的编译器，其中 GNU 指示到 gfortran 的路径，表明安装程序找到的了该编译器：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Enter option: 1</span><br><span class="line"></span><br><span class="line">Information about compiler tests for OS LINUX:</span><br><span class="line"> 1: g95 tested at AIUB</span><br><span class="line"> 2: gfortran tested at AIUB</span><br><span class="line"> 3: ifort tested at AIUB (version 10 and 12)</span><br><span class="line"> 4: pgf90 tested at AIUB</span><br><span class="line"> 5: f90 tested at AIUB</span><br><span class="line"> 6: Use "OTHER" compiler from /opt/BERN52/GPS/EXE/Makefile.template</span><br><span class="line"></span><br><span class="line">Select Compiler for OS LINUX:</span><br><span class="line"> 1: G95</span><br><span class="line"> 2: GNU -&gt; /usr/bin/gfortran</span><br><span class="line"> 3: IFC</span><br><span class="line"> 4: PG_F90</span><br><span class="line"> 5: SUNF90</span><br><span class="line"> 6: OTHER</span><br><span class="line"></span><br><span class="line">Select  [2]:</span><br></pre></td></tr></table></figure>
+<p>这里系统已经检测到了 gfortran，键入 <strong><code>2</code></strong> 选择 gfortran 编译器（也可以直接按 <strong><code>Enter</code></strong> 键回车，因为默认就是 2）。然后安装程序继续打印出当前应用的环境变量：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Current Values:</span><br><span class="line">--------------</span><br><span class="line">    VARIABLE DESCRIPTION           VARIABLE NAME      VARIABLE VALUE</span><br><span class="line"> 1: Path to software               C               =&gt; /opt/BERN52</span><br><span class="line"> 2: Path to Qt libraries           QTBERN          =&gt; /usr/local/qt4</span><br><span class="line"> 3: Operating system group         OS              =&gt; UNIX</span><br><span class="line"> 4: Operating system name          OS_NAME         =&gt; LINUX</span><br><span class="line"> 5: Fortran compiler name          F_VERS          =&gt; GNU</span><br><span class="line"> 6: List of additional compilers   F_VERS_LIST     =&gt; </span><br><span class="line"> 7: Host of the BPE server         BPE_SERVER_HOST =&gt; U1604</span><br><span class="line"> 8: Path to user environment       U               =&gt; $&#123;HOME&#125;/GPSUSER52</span><br><span class="line"> 9: Path to temp. user environment T               =&gt; $&#123;HOME&#125;/GPSTEMP</span><br><span class="line">10: Path to campaign area          P               =&gt; $&#123;HOME&#125;/GPSDATA/CAMPAIGN52</span><br><span class="line">11: Path to datapool area          D               =&gt; $&#123;HOME&#125;/GPSDATA/DATAPOOL</span><br><span class="line">12: Path to savedisk area          S               =&gt; $&#123;HOME&#125;/GPSDATA/SAVEDISK</span><br></pre></td></tr></table></figure>
+<p>解释一下此处的默认环境变量：</p>
+<ul>
+<li>第 1 项：Bernese 软件的安装目录</li>
+<li>第 2 项：所使用的 Qt 4 所在目录</li>
+<li>第 3 项：操作系统类型</li>
+<li>第 4  项：操作系统名称</li>
+<li>第 5 项：使用的 Fortran 编译器</li>
+<li>第 6 项：其他可用的编译器</li>
+<li>第 7 项： BPE 服务器</li>
+<li>第 8  项：用户环境目录</li>
+<li>第 9 项：用户临时文件缓存目录</li>
+<li>第 10 项：用户解算工程文件夹</li>
+<li>第 11 项：用户数据文件夹目录</li>
+<li>第 12  项：解算成果目录</li>
+</ul>
+<p>若接受其默认的变量设置，输入 <strong><code>y</code></strong>。要修改其中的配置，输入 <strong><code>n</code></strong>，然后根据其提示，输入变量编号来配置变量。这里使用默认设置，输入 <strong><code>y</code></strong>。随后安装程序将检测是否存在所需的文件夹，当提示某个文件夹不存在时，程序提示是否创建，键入 <strong><code>y</code></strong> 创建即可。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Accept the values (y/n): y</span><br><span class="line">Use of uninitialized value $hlp in substitution (s///) at /opt/BERN52/GPS/EXE/configure.pm line 927, &lt;STDIN&gt; line 3.</span><br><span class="line"></span><br><span class="line">**********************************************************************</span><br><span class="line">* /opt/BERN52/GPS/EXE/LOADGPS.setvar</span><br><span class="line">* has been updated.</span><br><span class="line">**********************************************************************</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Your campaign area $&#123;P&#125; does not exist:</span><br><span class="line">/root/GPSDATA/CAMPAIGN52</span><br><span class="line">Create it now (y/n): </span><br><span class="line"></span><br><span class="line">Your campaign area $&#123;P&#125; does not exist:</span><br><span class="line">/root/GPSDATA/CAMPAIGN52</span><br><span class="line">Create it now (y/n): </span><br><span class="line"></span><br><span class="line">Your campaign area $&#123;P&#125; does not exist:</span><br><span class="line">/root/GPSDATA/CAMPAIGN52</span><br><span class="line">Create it now (y/n): y</span><br><span class="line"></span><br><span class="line">Your datapool area $&#123;D&#125; does not exist:</span><br><span class="line">/root/GPSDATA/DATAPOOL</span><br><span class="line">Create it now (y/n): y</span><br><span class="line"></span><br><span class="line">Your savedisk area $&#123;S&#125; does not exist:</span><br><span class="line">/root/GPSDATA/SAVEDISK</span><br><span class="line">Create it now (y/n): y</span><br><span class="line"></span><br><span class="line">Press Enter to continue</span><br></pre></td></tr></table></figure>
+<p>之后按 <strong><code>Enter</code></strong> 键继续，再按 <strong><code>2</code></strong> 下载更新文件。由于下载更新文件的过程可能会很慢，若已经有更新文件（本文为 <code>update_2013-07-18.tar.gz</code>），<strong><code>Ctrl+C</code></strong> 取消更新文件下载，另开终端并将更新文件复制到 <code>/opt/BERN52</code> 目录下，然后回到原终端中输入 <strong><code>y</code></strong>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">spacefan@U1604:~/Bernesev5.2/Bernese_v5.2_linux$ sudo mv update_2013-07-18.tar.gz /opt/BERN52/</span><br><span class="line">[sudo] spacefan 的密码： </span><br><span class="line">spacefan@U1604:~/Bernesev5.2/Bernese_v5.2_linux$ cd /opt/BERN52/</span><br><span class="line">spacefan@U1604:/opt/BERN52$ ls -l</span><br><span class="line">总用量 3740</span><br><span class="line">drwxrwsr-x  2      978     1070    4096 6月  23 22:34 BPE</span><br><span class="line">drwxrwsr-x 12      978     1070    4096 7月  18  2013 GPS</span><br><span class="line">drwxrwsr-x  3      978     1070    4096 7月  18  2013 INC</span><br><span class="line">drwxrwsr-x  3      978     1070    4096 7月  18  2013 LIB</span><br><span class="line">drwxrwsr-x  2      978     1070    4096 7月  18  2013 MENU</span><br><span class="line">drwxrwsr-x  3      978     1070    4096 7月  18  2013 PGM</span><br><span class="line">-rwxrw-rw-  1 spacefan spacefan 3803626 6月  23 23:04 update_2013-07-18.tar.gz</span><br></pre></td></tr></table></figure>
+<p><strong>好，重点来了：继续之前，先来填坑</strong>。首先对 <code>BERN52</code> 目录赋予执行权限，另开终端进入 <code>/opt</code> 进行权限设置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/BERN</span><br><span class="line">sudo chmod -R 777 . # or $  sudo chmod -R 777 *</span><br></pre></td></tr></table></figure>
+<p>然后，查询 <code>ld</code> 的版本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ld -v</span><br><span class="line">GNU ld (GNU Binutils for Ubuntu) 2.26.1</span><br></pre></td></tr></table></figure>
+<p>版本大于 <code>2.22</code>，需要修改 <code>BERN52/MENU/memu.pro</code> 中的内容。打开该文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gedit /opt/BERN52/MENU/menu.pro</span><br></pre></td></tr></table></figure>
+<p>找到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">##QMAKE_LIBS += -lz</span><br></pre></td></tr></table></figure>
+<p>去除前面的注释 <code>#</code>，保存后退出。然后，回到原终端，按 <strong><code>3</code></strong> 添加新用户环境。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">==========================================</span><br><span class="line">CONFIGURATION OF THE BERNESE GNSS SOFTWARE</span><br><span class="line">==========================================</span><br><span class="line"> 1 ... Update LOADGPS.setvar</span><br><span class="line"> 2 ... Install online updates</span><br><span class="line"> 3 ... Add a new user environment</span><br><span class="line"> 4 ... Compile the menu</span><br><span class="line"> 5 ... Compile the programs</span><br><span class="line"> 6 ... Install the example campaign</span><br><span class="line"> 7 ...   ---</span><br><span class="line"></span><br><span class="line"> x ... Exit</span><br><span class="line"></span><br><span class="line">Enter option: 3</span><br><span class="line"></span><br><span class="line">User environment /root/GPSUSER52 already exists.</span><br><span class="line">Update files (y/n): y</span><br><span class="line"></span><br><span class="line">Copying menu and program input files...</span><br><span class="line">Copying BPE user scripts...</span><br><span class="line">Copying examples for process control files...</span><br><span class="line">Copying BPE options for processing examples...</span><br><span class="line">Copying ICONS ...</span><br><span class="line">Extracting ICONS ...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**********************************************************************</span><br><span class="line">* User area /root/GPSUSER52</span><br><span class="line">* has been added/updated.</span><br><span class="line">**********************************************************************</span><br></pre></td></tr></table></figure>
+<p>完成后，继续按 <strong><code>4</code></strong> 编译图形界面菜单。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">==========================================</span><br><span class="line">CONFIGURATION OF THE BERNESE GNSS SOFTWARE</span><br><span class="line">==========================================</span><br><span class="line"> 0 ... Complete installation (Steps 1 to 5)</span><br><span class="line"> 1 ... Update LOADGPS.setvar</span><br><span class="line"> 2 ... Install online updates</span><br><span class="line"> 3 ... Add a new user environment</span><br><span class="line"> 4 ... Compile the menu</span><br><span class="line"> 5 ... Compile the programs</span><br><span class="line"> 6 ... Install the example campaign</span><br><span class="line"> 7 ...   ---</span><br><span class="line"></span><br><span class="line"> x ... Exit</span><br><span class="line"></span><br><span class="line">Enter option: 4</span><br><span class="line"></span><br><span class="line">Running the compilation of the menu.</span><br><span class="line">This can take a while...</span><br><span class="line">It depends on the computer performance.</span><br><span class="line"></span><br><span class="line">All compilation output is redirected into file</span><br><span class="line">/opt/BERN52/MENU/MENUCOMP.log</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">*******************************************</span><br><span class="line">* Bernese menu compiled successfully.</span><br><span class="line">*******************************************</span><br></pre></td></tr></table></figure>
+<p>菜单编译成功后按 <strong><code>5</code></strong> 继续编译程序，如果看到下面的提示，那么恭喜你，Bernese 软件已经编译安装成功了！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*******************************************</span><br><span class="line">* Fortran programs compiled successfully.</span><br><span class="line">*******************************************</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意</strong>：若提示 Fortran 程序编译至 100/100 时出错，返回安装程序引导，按 <strong><code>0</code></strong> 重新执行 1~5 步，根据经验，应该会成功编译了。</p>
+</blockquote>
+<h4 id="3-3-3-安装示例"><a href="#3-3-3-安装示例" class="headerlink" title="3.3.3 安装示例"></a>3.3.3 安装示例</h4><p>Bernese 编译安装成功后，需要跑一下示例文件 <code>PPP_DEMO.PCF</code> 来验证软件是否可以正常工作，在跑 <code>PPP_DEMO.PCF</code> 之前，最好先完成这几件事情：</p>
+<ul>
+<li><p>更新 <code>CAMPAIGN52.tgz</code>、<code>DATAPOOL.tgz</code>、<code>SAVEDISK.tgz</code></p>
+<p>最新的  <code>CAMPAIGN52.tgz</code>、<code>DATAPOOL.tgz</code>、<code>SAVEDISK.tgz</code> 文件需要在 Bernese FTP 下载：<a href="ftp.aiub.unibe.ch/BERN52/">ftp.aiub.unibe.ch/BERN52/</a>，下载后替换掉自带的文件，否则跑 <code>PPP_DEMO.PCF</code> 时会报错。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spacefan@U1604:~$ cd Bernesev5.2/Bernese_v5.2_FTP_20170915/</span><br><span class="line">spacefan@U1604:~/Bernesev5.2/Bernese_v5.2_FTP_20170915$ cp * /opt/BERN52/GPS/DOC/</span><br><span class="line">spacefan@U1604:~/Bernesev5.2/Bernese_v5.2_FTP_20170915$ ls</span><br><span class="line">CAMPAIGN52.tgz  DATAPOOL.tgz  SAVEDISK.tgz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新 <code>/BERN/GPS/GEN</code> 目录</p>
+<p>最好也更新 <code>/BERN/GPS/GEN</code>，否则可能会提示：<code>缺少 SINEX. SINEX.PPP IONEX. IONEX.PPP 等文件</code>，下载地址：<a href="ftp.aiub.unibe.ch/BSWUSER52/">ftp.aiub.unibe.ch/BSWUSER52/</a>。由于文件较多，建议用 FTP 软件下载。下载后，不要删除自带的 <code>/BERN/GPS/GEN</code> 目录，做好备份。</p>
+</li>
+<li><p>添加星历文件 </p>
+<p>Bernese 5.2 使用 JPL/NAIF 发布的 <code>DE405.EPH</code> 星历，下载地址：<a href="https://github.com/SGL-UT/GPSTk/blob/master/examples/DE405.EPH，下载后放入" target="_blank" rel="noopener">https://github.com/SGL-UT/GPSTk/blob/master/examples/DE405.EPH，下载后放入</a> <code>/BERN52/GPS/GEN</code>目录下。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp DE405.EPH /opt/BERN52/GPS/GEN/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>添加 RINEX 转换程序</p>
+<p>将 Linux 版本的 RINEX 转换程序放入 <code>usr/bin</code> 目录下，否则第安装示例文件时会出现 <code>识别不了 RRX2RNX 文件</code> 的提示。下载地址：<a href="http://terras.gsi.go.jp/ja/crx2rnx.html" target="_blank" rel="noopener">Download page for the RNXCMP software</a>，32位为 <a href="http://terras.gsi.go.jp/ja/crx2rnx/RNXCMP_4.0.7_Linux_x86_32bit.tar.gz" target="_blank" rel="noopener">RNXCMP_4.0.7_Linux_x86_32bit.tar.gz</a>，64位为：<a href="http://terras.gsi.go.jp/ja/crx2rnx/RNXCMP_4.0.7_Linux_x86_64bit.tar.gz" target="_blank" rel="noopener">RNXCMP_4.0.7_Linux_x86_64bit.tar.gz</a>。下载后解压，进入目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd RNXCMP_4.0.7_Linux_x86_64bit/bin/</span><br><span class="line">sudo cp * /usr/bin</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>：这几件事除了星历文件，其余三件都可以在安装开始之前进行，其中第一件和第二件可以直接在安装包文件中进行替换。但为了保险起见，最好先按照本文步骤操作。</p>
+</blockquote>
+<p>然后，继续在上小节的安装提示中，按 <strong><code>6</code></strong> 安装示例，如果看到下面的提示，说明示例安装成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Installation of the example campaign has been finished</span><br></pre></td></tr></table></figure>
+<h4 id="3-3-3-添加普通用户"><a href="#3-3-3-添加普通用户" class="headerlink" title="3.3.3 添加普通用户"></a>3.3.3 添加普通用户</h4><p>使用 <code>root</code> 用户进行数据解算操作既不方便也不安全。为了让非 <code>root</code> 用户也能使用 Bernese，需要使用新用户加载环境变量设置文件，并启动配置程序。按 <strong><code>3</code></strong> 继续，若不慎将终端关闭，新开终端中执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source /opt/BERN52/GPS/EXE/LOADGPS.setvar</span><br><span class="line">perl /opt/BERN52/GPS/EXE/configure.pm</span><br></pre></td></tr></table></figure>
+<p>程序再次打印出安装提示，此时键入 <strong><code>3</code></strong>，根据程序提示添加新用户的环境变量即可。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">==========================================</span><br><span class="line">CONFIGURATION OF THE BERNESE GNSS SOFTWARE</span><br><span class="line">==========================================</span><br><span class="line"> 1 ... Update LOADGPS.setvar</span><br><span class="line"> 2 ... Install online updates</span><br><span class="line"> 3 ... Add a new user environment</span><br><span class="line"> 4 ... Compile the menu</span><br><span class="line"> 5 ... Compile the programs</span><br><span class="line"> 6 ... Install the example campaign</span><br><span class="line"> 7 ...   ---</span><br><span class="line"></span><br><span class="line"> x ... Exit</span><br><span class="line"></span><br><span class="line">Enter option: 3</span><br><span class="line"></span><br><span class="line">Create user environment /home/spacefan/GPSUSER52 (y/n): y</span><br><span class="line"></span><br><span class="line">Copying menu and program input files...</span><br><span class="line">Copying BPE user scripts...</span><br><span class="line">Copying examples for process control files...</span><br><span class="line">Copying BPE options for processing examples...</span><br><span class="line">Copying ICONS ...</span><br><span class="line">Extracting ICONS ...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**********************************************************************</span><br><span class="line">* User area /home/spacefan/GPSUSER52</span><br><span class="line">* has been added/updated.</span><br><span class="line">**********************************************************************</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> <strong>注意</strong>：此步是在普通用户模式下进行的操作，而非 <code>root</code> 用户。</p>
+</blockquote>
+<h4 id="3-3-4-配置环境变量"><a href="#3-3-4-配置环境变量" class="headerlink" title="3.3.4  配置环境变量"></a>3.3.4  配置环境变量</h4><p>为了在每次开机后都能直接使用 Bernese 软件，需要配置在系统启动时自动加载环境变量。编辑用户主文件夹内的配置文件（<code>root</code> 下的配置文件也可以一并添加了）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gedit ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>在文件末尾为 Bernese 加载环境变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Load environment variables for Bernese GNSS Software</span><br><span class="line">source /opt/BERN52/GPS/EXE/LOADGPS.setvar</span><br></pre></td></tr></table></figure>
+<p>之后在终端中键入 <strong><code>G</code></strong> 就可以启动 Bernese 了，如下图所示。</p>
+<p><img src="/images/GNSS/Bernese/Bernese52_GUI.png" width="100%" height="100%"></p>
+<p>如果 <code>3.3.3</code> 小节在添加普通用户时 <code>GPSDATA</code> 移动不成功，可能会在启动时报错：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cannot open INP file /home/spacefan/GPSDATA/CAMPAIGN52/EXAMPLE/STA/SESSIONS.SES</span><br><span class="line">Using standard session definition</span><br></pre></td></tr></table></figure>
+<p>从 <code>/root</code> 目录将 <code>GPSDATA</code> 拷贝到普通用户目录 <code>/home/spacefan</code>，再为其添加普通用户权限即可。</p>
+<h2 id="4-结束语"><a href="#4-结束语" class="headerlink" title="4 结束语"></a>4 结束语</h2><p>至此，Bernese 5.2 软件在 Ubuntu 16.04.6 下编译安装成功。简单总结一下：</p>
+<ul>
+<li>安装依赖：libx11-dev、libxext-dev、libxtst-dev、zlib1g-dev、gfortran &amp; Qt-4.8.7（网上有些教程说要装 ncompress，本文没装并未出错，若出错无法解决可以安装）。</li>
+<li>手动下载更新文件，复制到 <code>BERN52</code> 目录下。</li>
+<li>运行 <code>setup.sh</code> 前，为防止乱码，先在终端运行：<code>$ dos2unix setuo.sh</code> 。</li>
+<li>第二步过后要修改权限并检查 <code>ld</code> 版本号，并做相应填坑工作。</li>
+<li>安装示例之前，处理好示例文件更新、<code>DE405.PHE</code> 星历和 RENX 转换工具的添加。</li>
+<li>最后重新运行安装配置文件 <code>configure.pm</code>，配置好普通用户的环境变量。</li>
+</ul>
+<p>后续，将写一些在 Bernese 5.2 下的 GNSS 数据处理和精密定轨教程，敬请期待！</p>
+<h2 id="5-参考资料"><a href="#5-参考资料" class="headerlink" title="5 参考资料"></a>5 参考资料</h2><p>【1】<a href="ftp://ftp.aiub.unibe.ch/BERN52/DOCU/" target="_blank" rel="noopener">Bernese GNSS Software Version 5.2，DOCU52.pdf</a></p>
+<p>【2】<a href="https://blog.csdn.net/qq_36498339/article/details/78642033" target="_blank" rel="noopener">安装Ubuntu 16.04后要做的事</a></p>
+<p>【3】<a href="https://blog.csdn.net/shitsnail/article/details/78841919" target="_blank" rel="noopener">Linux（Ubuntu）系统下安装Qt library和Qt Creator全过程记录</a></p>
+<p>【4】<a href="http://gnss.help/2018/07/02/ubuntu-install-bernese/index.html" target="_blank" rel="noopener">Ubuntu 操作系统安装 Bernese</a></p>
+<p>【5】<a href="http://blog.sciencenet.cn/blog-3379275-1183495.html" target="_blank" rel="noopener">Windows安装虚拟机-Centos7；fortran及Qt4.8.4, BERNESE5.2 linux下安装步骤</a></p>
+<p>【6】<a href="http://blog.sciencenet.cn/blog-1094854-863531.html" target="_blank" rel="noopener">BERNESE5.2 linux 安装</a></p>
+<p>【7】<a href="http://blog.sciencenet.cn/blog-1393544-1086616.html" target="_blank" rel="noopener">Bernese安装后要做的几件小事</a></p>
+<p>【8】<a href="http://blog.sina.com.cn/s/blog_61ada2850102x23q.html" target="_blank" rel="noopener">Linux Mint 18.2安装Bernese 5.2的注意事项</a></p>
+	  
+	</div>
+
+	<!-- recommended posts -->
+	
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/2019/04/06/SatelliteDesign-Orbits/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">留言</h2>
+    	 
+	 <div id="comment-thread"></div>
+	 <div id="loading-spin"></div>
+	 <script type="text/javascript">
+	   getComments({
+           type: "github" ? "github" : "github",       
+	       user: "spacefan",
+	       repo: "spacefan-freemind-blog",
+		   client_id: "f2072a8da3401ea34d92",
+           client_secret: "a11277dbf0f5791d093f7300bc2504de7cf3b101",
+		   no_comment: "暂时还没有留言呢，点击下面的按钮去留言吧！",
+		   go_to_comment: "去留言",
+		   no_issue: "no_issue",
+		   issue_title: "Bernese 5.2 在 Ubuntu 16.04.6 编译安装",
+		   issue_id: "",
+		   btn_class: "btn btn-primary",
+		   comments_target: "#comment-thread",
+		   loading_target: "#loading_spin"
+		   });
+	 </script>
+  
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2019-06-25 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/专业技能/">专业技能<span>7</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/GNSS/">GNSS<span>1</span></a></li> <li><a href="/tags/Bernese/">Bernese<span>1</span></a></li> <li><a href="/tags/Ubuntu/">Ubuntu<span>1</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#1-Ubuntu-16-04-安装与优化"><span class="toc-article-text">1. Ubuntu 16.04 安装与优化</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#1-1-更新软件源"><span class="toc-article-text">1.1 更新软件源</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#1-2-Unity-桌面环境调整（Optional）"><span class="toc-article-text">1.2 Unity 桌面环境调整（Optional）</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#1-3-安装Linux显卡驱动"><span class="toc-article-text">1.3 安装Linux显卡驱动</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#1-4-搜狗输入法Linux版本"><span class="toc-article-text">1.4 搜狗输入法Linux版本</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#1-5-安装-Ubuntu-受限的额外的解码器"><span class="toc-article-text">1.5 安装 Ubuntu 受限的额外的解码器</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#1-6-安装-adobe-flash-播放器（Optional）"><span class="toc-article-text">1.6 安装 adobe-flash 播放器（Optional）</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#1-7-安装-Typora-编辑器（Optional）"><span class="toc-article-text">1.7 安装 Typora 编辑器（Optional）</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#1-8-安装-Oracle-Java（Optional）"><span class="toc-article-text">1.8 安装 Oracle Java（Optional）</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#1-9-其他微调整（Optional）"><span class="toc-article-text">1.9 其他微调整（Optional）</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#2-Linux-基础命令与用户权限"><span class="toc-article-text">2. Linux 基础命令与用户权限</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#2-1-卸载软件（以-Gnome-的卸载为例）"><span class="toc-article-text">2.1 卸载软件（以 Gnome 的卸载为例）</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#2-2-文件-文件夹的复制、移动和删除"><span class="toc-article-text">2.2 文件/文件夹的复制、移动和删除</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#2-2-1-文件复制命令：cp"><span class="toc-article-text">2.2.1 文件复制命令：cp</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#2-2-2-文件移动命令：mv"><span class="toc-article-text">2.2.2 文件移动命令：mv</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#2-2-3-文件删除命令-rm"><span class="toc-article-text">2.2.3 文件删除命令: rm</span></a></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#2-3-文件-文件夹权限管理"><span class="toc-article-text">2.3 文件/文件夹权限管理</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#2-3-1-Linux-用户权限简介"><span class="toc-article-text">2.3.1 Linux 用户权限简介</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#2-3-2-权限修改方法"><span class="toc-article-text">2.3.2 权限修改方法</span></a></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#2-4-用户和密码管理"><span class="toc-article-text">2.4 用户和密码管理</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#2-4-1-root-密码设置"><span class="toc-article-text">2.4.1 root 密码设置</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#2-4-2-root-amp-guest-登陆设置"><span class="toc-article-text">2.4.2 root &amp; guest 登陆设置</span></a></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#2-4-3-用户密码修改"><span class="toc-article-text">2.4.3 用户密码修改</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#3-Bernese-5-2-编译安装"><span class="toc-article-text">3. Bernese 5.2 编译安装</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#3-1-确认软件包内容"><span class="toc-article-text">3.1 确认软件包内容</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#3-2-安装依赖程序"><span class="toc-article-text">3.2 安装依赖程序</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#3-2-1-安装依赖库"><span class="toc-article-text">3.2.1 安装依赖库</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#3-2-2-安装-GNU-Fortran"><span class="toc-article-text">3.2.2 安装 GNU Fortran</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#3-2-3-安装-Qt-4"><span class="toc-article-text">3.2.3 安装 Qt 4</span></a></li></ol></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#3-3-安装-Bernese"><span class="toc-article-text">3.3 安装 Bernese</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#3-3-1-格式转换"><span class="toc-article-text">3.3.1 格式转换</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#3-3-2-安装-Bernese"><span class="toc-article-text">3.3.2 安装 Bernese</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#3-3-3-安装示例"><span class="toc-article-text">3.3.3 安装示例</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#3-3-3-添加普通用户"><span class="toc-article-text">3.3.3 添加普通用户</span></a></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#3-3-4-配置环境变量"><span class="toc-article-text">3.3.4  配置环境变量</span></a></li></ol></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#4-结束语"><span class="toc-article-text">4 结束语</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#5-参考资料"><span class="toc-article-text">5 参考资料</span></a></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016~2019 Spacefan
+  
+      由 <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> 强力驱动 || 主题使用 <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>   
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    menuSettings: {
+      zoom: "None"
+    },
+    showMathMenu: false,
+    jax: ["input/TeX","output/CommonHTML"],
+    extensions: ["tex2jax.js"],
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [["\\(", "\\)"]],
+      displayMath: [["\\[", "\\]"]]
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script>
+
+
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+<!-- syntax highlighting -->
+
+  <script>
+  marked.setOptions({
+    highlight: function (code, lang) {
+        return hljs.highlightAuto(code).value;
+    }
+  });
+  function Highlighting(){
+    var markdowns = document.getElementsByClassName('markdown');
+    for(var i=0;i<markdowns.length;i++){
+        if(markdowns[i].innerHTML) markdowns[i].innerHTML =marked(markdowns[i].innerHTML);
+    }
+  }
+  window.addEventListener('DOMContentLoaded', Highlighting, false);
+  window.addEventListener('load', Highlighting, false);
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+</body>
+   </html>
